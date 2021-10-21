@@ -4,20 +4,20 @@
 GoTo
 
 ## Problematica que atiende
-Los negocios recién inaugurados se ven en la necesidad de pagar por publicidades costosas para dar a conocer sus negocios y lo que ofrece.
+El turismo es una parte muy relevante en la mayor parte de los estados del país 
+y es de suma importancia que puedan conocer los lugares que caracteriza a cada uno de ellos, por lo cual queremos ofrecer una guía turística para que las personas que llegan la ciudad puedan orientarse acerca de los sitios que tiene para visitar.
+
 
 ## Propuesta de solución
-Crear una aplicación donde te permita registrar tu negocio en la app GoTo, con una descripción breve de lo que ofrece, la cual los usuarios registrados podrán consultar y opinar sobre el negocio o sitio asistido. sugiriendo algunos de sus negocios y así atraer a más clientes dándose a conocer de una manera más extensa 
-
+Crear una guía turística que les permita tenerla a la mano en todo momento a través de su celular  la app GoTo, donde los usuarios podrán registrarse y ver cada uno de los sitios a los que pueden asistir, con una descripción breve de lo que ofrece, la cual los usuarios registrados podrán consultar e indicar su nivel de satisfacción sobre el sitio asistido. sugiriendo algunos de sus lugares más famosos y así atraer a más turistas 
 ## Definición de requerimientos del MVP
 
 ### Requerimientos funcionales
 1. Manejo de usuarios 
-  - El sistema deberá permitir crear una cuenta como usuario de negocios o usuario normal solicitando los siguientes para los usuarios 
-    - Usuario de negocios
+  - El sistema deberá permitir al usuario administrador agregar sitios turisticos solicitando los siguientes informacion
+    - Usuario administrador
       - Nombre del negocio 
-      - Celular 
-      - Contraseña 
+      - Celular
       - Categoría
       - Costo global 
       - Descripción
@@ -25,19 +25,20 @@ Crear una aplicación donde te permita registrar tu negocio en la app GoTo, con 
       - Ubicación
       - Imagenes principal 
       - 4 Imágenes más
-     - Usuario normal
+   - El sistema debera permitir al usuario turista poder registrarse  solicitando la siguiente informacion 
+     - Usuario turista
          - Nombre 
-         - Teléfono
+         - Correo
          - Contraseña 
          - Ubicación
-2. EL sistema deberá permitir loguearse con usuario numero de celular y contraseña
+2. EL sistema deberá permitir loguearse con correo de y contraseña
 3. EL sistema deberá permitir cerrar la sección activa   
 4. Información de la pantalla de inicio
-   - El sistema deberá permitirle al usuario comun realizar una búsqueda  en la pantalla de inicio por nombre  o categoría mostrando la siguiente información
+   - El sistema deberá permitirle al usuario turista realizar una búsqueda  en la pantalla de inicio por nombre  o categoría mostrando la siguiente información
         - Imagen 
         - Título
         - Descripción breve 
-    - El sistema deberá permitir visualizar los negocios recientes tomando como criterio y sugerencias tomando como criterio de selección la cantidad de     reacciones, estrellas, y vistas mostrando la siguiente información
+    - El sistema deberá permitir visualizar los sitios turisticos recientes tomando como criterio, sugerencias y  cantidad de  reacciones, estrellas, y vistas mostrando la siguiente información
          - Imagen
          - Título
     
@@ -46,52 +47,40 @@ Crear una aplicación donde te permita registrar tu negocio en la app GoTo, con 
       - Icono de inicio
       - Icono de reacciones 
       - Icono de la session
-      - En caso de ser usuario de negocio mostrar icono del negocio
+      - En caso de ser administrador  mostrar icono de agregar un nuevo sitio
       - Botón de cerrar sesión en la parte inferior derecha de la pantalla de inicio 
-6. Iformación de la pantalla de detalles de los negocios
-     - El sistema deberá permitir  visualizar una pantalla como usuario normal donde se aprecie como se visualiza el negocio.
-7. Pantalla de los negocios al que el usuario reaccionó 
-    - El sistema deberá tener una pantalla para para visualizar las reacciones a sitios o negocios   en forma de carta mostrando la siguiente información
+6. Iformación de la pantalla de detalles de los sitios 
+     - El sistema deberá permitir  visualizar una pantalla como usuario turista poder ver los detalles del sitio.
+7. Pantalla de los sitios al que el usuario turista reaccionó 
+    - El sistema deberá tener una pantalla para para visualizar las reacciones a sitios turisticos en forma de carta mostrando la siguiente información
        - Imagen del negocio
        - Cantidad de estrellas 
        - Título 
        - Icono de reacción 
        - Descripción 
-8. Pantalla de de vista del negocio para el usuario negocio
-    - El sistema deberá mostrar una imagen principal la información siguiente 
-      - Título
-      - Categoría
-      - Selección de estrellas 
-      - Cantidad de visitas
-      - Cantidad de estrellas 
-      - Cantidad de reacciones 
-      - Descripción general 
-      - Teléfono
-      - Precio General
-      - 4 Imágenes 
-      - Ubicación
-
 ### Requerimientos no funcionales
-9. Usabilidad
+8. Usabilidad
     - El sistema deberá validar los los datos ingresados por los usuarios con las siguientes validaciones  
   Campos obligatorios
         - Contraseña de 8 caracteres
         - Incluye  letra 
         - Un carácter especial
-        - Un número
         - Numero de celular con  lada    
-        - Cantidad de caracteres 10 A  50
-10. Base de datos 
+        - Cantidad de caracteres de la descripcion 10 A  50
+   - Campos opcionales 
+        - Un número
+9. Base de datos 
     - EN el maneje la información del sistema se utilizara  usará postgresql y heroku.
     - La información podrá ser consultada a través de apis con ruby consumidas desde react native 
-11. Otros recursos 
+10. Otros recursos 
     - API de google
     - Para poder usar la ubicación de los negocios y de los usuarios  
-12. Interfaces
+11. Interfaces
     - Inicio de sesión 
-    - Registro de usuario de negocios y usuario normal 
+    - Registro de usuario turista
+    - Agregar nuevo sitio 
     - Pantalla de inicio 
-    - Detalles de los negocios 
+    - Detalles del sitio turistico 
     - Pantalla de reacciones  
 
 
