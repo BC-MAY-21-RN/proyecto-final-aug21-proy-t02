@@ -1,25 +1,29 @@
 # Diseño del MVP
 
  ## Inicio
- ![inicio](https://user-images.githubusercontent.com/74264081/138219571-8c3f4d0d-161f-4d51-825f-1ee1f26a263c.png)
+ ![login](https://user-images.githubusercontent.com/74264081/138372617-973cf8ce-aa5b-4ed3-9481-62b35b1c0788.png)
 ## Registro de usuario normal y validación  
- Before |  After
+
+![register](https://user-images.githubusercontent.com/74264081/138372837-e2b3159d-f913-43fb-9562-cf994cddb60d.png)|![registrerErr](https://user-images.githubusercontent.com/74264081/138372844-8556ea27-9e51-4cbf-a653-8a75618f15cd.png)
 :-------------------------:|:-------------------------:
-![1registro](https://user-images.githubusercontent.com/74264081/138220019-59936158-5876-4033-82e3-a90b0b520099.png)|![2Registro](https://user-images.githubusercontent.com/74264081/138220044-4c758c83-43fe-406f-a34c-2ef200241d73.png)
+
 
 ## Registro de usuario de negocios y validación 
-
- ![uno](https://user-images.githubusercontent.com/74264081/138220629-ebc5c871-e6c5-4ac2-88a5-07ab3d5abbb0.png)|![dos](https://user-images.githubusercontent.com/74264081/138220662-8172e6ab-0b23-4688-80dd-81aa2c95a3fa.png)
+![1CREATE](https://user-images.githubusercontent.com/74264081/138373361-7f5a4290-5f51-410d-8285-3fcb7c437d88.png)|![2CRETAE](https://user-images.githubusercontent.com/74264081/138373388-969d74c0-c66d-4e2b-b540-284de8fa3915.png)
 :-------------------------:|:-------------------------:
-![tres](https://user-images.githubusercontent.com/74264081/138220700-b6f72812-e26e-48e9-9e15-ac7445447b00.png)|![cuatro](https://user-images.githubusercontent.com/74264081/138220759-40dc2814-8b69-44eb-94de-8fc2665dedbd.png)
+![createError](https://user-images.githubusercontent.com/74264081/138373419-6aaa366f-451d-4669-aa91-636fd9e9d46a.png)|![2createrERROR](https://user-images.githubusercontent.com/74264081/138373428-392a57aa-98ab-4072-9e63-f68ef1e86fb0.png)
+
+
 
   ## Pantalla de inico
-![home](https://user-images.githubusercontent.com/74264081/138219353-9dd4af68-ad7b-48e7-86e4-d351e2921f5c.png)
+![hOME](https://user-images.githubusercontent.com/74264081/138373621-32a4086c-50f8-4041-a231-804991cc1b15.png)
 :-------------------------:|
-![2home](https://user-images.githubusercontent.com/74264081/138219344-762d24c3-ef5a-4099-b8eb-2abaf4e20deb.png)
+![HOME2](https://user-images.githubusercontent.com/74264081/138373651-f1bd9044-2541-49d3-924d-42e95d68ec4c.png)
+
 
   ## Pantalla de reacciones  
-  ![react](https://user-images.githubusercontent.com/74264081/138224618-4eaa033a-bf62-4ca7-b85e-803958544205.png)
+  ![REACC](https://user-images.githubusercontent.com/74264081/138373757-d4a4ffd6-97f0-49ff-a448-d12825a887eb.png)
+
 
   ## Pantalla detalles del negocio
 ![uno](https://user-images.githubusercontent.com/74264081/138221152-d0bea741-cb6d-464f-92cf-547c4d09fc13.png)
