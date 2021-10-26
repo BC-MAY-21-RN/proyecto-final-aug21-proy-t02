@@ -1,6 +1,16 @@
 import styled from 'styled-components/native';
 import {colors} from '../library/constants/colors';
 
+export const Layout = styled.View`
+  background-color: ${colors.black};
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  `;
 export const MainContainer = styled.SafeAreaView`
   display: flex;
   padding: 15px;
@@ -32,17 +42,18 @@ export const TextButton = styled.Text`
 `;
 
 export const InputText = styled.TextInput`
-  background: #292e3c;
+  background: ${colors.darkGray};
   width: 100%;
   height: 35%;
   margin-top: 10px;
   border-radius: 13px;
-  color: #fff;
+  padding-left: 10px;
+  color: ${colors.white};
 `;
 export const InputLabel = styled.Text`
   justify-content: flex-start;
   align-items: flex-start;
-  color: #8b8fa4;
+  color: ${colors.lettersGray};
   font-size: 15px;
   margin-Top: 5px;
   left: 10px;
