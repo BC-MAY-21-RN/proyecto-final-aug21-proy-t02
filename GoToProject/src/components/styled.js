@@ -14,7 +14,7 @@ export const Layout = styled.View`
 export const MainContainer = styled.SafeAreaView`
   display: flex;
   padding: 15px;
-  flex-direccion: column;
+  flex-direction: column;
   background: ${colors.black};
   justify-content: flex-start;
   height: 100%;
@@ -22,8 +22,8 @@ export const MainContainer = styled.SafeAreaView`
 `;
 
 export const CustomButton = styled.TouchableOpacity`
-background:${({c}) => c ?? 'colors.blue'};
-border:${({br}) => br ?? 'none'} 
+background:${({c}) => c ?? colors.blue};
+border:${({br}) => br ?? 'none'}; 
 justify-content: center;
 align-items: center;
 display: flex;
@@ -68,4 +68,5 @@ export const FlexContainer = styled.View`
   margin-bottom: ${({mbt}) => mbt ?? '10px'};
   width: ${({w}) => w ?? '100%'};
   height: ${({h}) => h ?? '100%'};
+  border: white;
 `;

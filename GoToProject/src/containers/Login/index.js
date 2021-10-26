@@ -1,11 +1,9 @@
 import React from 'react';
 import {
-  MainContainer,
   CustomButton,
   TextButton,
   InputLabel,
   InputText,
-  ButtonContainer,
   FlexContainer,
   Layout,
 } from '../../components/styled';
@@ -20,7 +18,7 @@ export const Login = () => {
         email: 'Pool@gmail.com',
         password: '01Vladi*',
       }}
-      onSubmit={ values => console.log(values) }>
+      >
       {({values}) => (
             <Layout>
             <FlexContainer  h="50%">
@@ -48,12 +46,7 @@ export const Login = () => {
             <CustomButton br="3px solid #59bcf4;" w="100%" h="35%" c={colors.black}>
               <TextButton>Login</TextButton>
             </CustomButton>
-            <CustomButton
-              br="3px solid black;"
-              w="100%"
-              h="35%"
-              c={colors.blue}
-              mbt="15px">
+            <CustomButton br="3px solid black;" h="35%"             mbt="15px">
               <TextButton>Sign in</TextButton>
             </CustomButton>
           </FlexContainer>
