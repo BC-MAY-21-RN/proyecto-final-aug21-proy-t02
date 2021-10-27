@@ -10,7 +10,7 @@ export const Layout = styled.View`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  `;
+`;
 export const MainContainer = styled.SafeAreaView`
   display: flex;
   padding: 15px;
@@ -22,16 +22,22 @@ export const MainContainer = styled.SafeAreaView`
 `;
 
 export const CustomButton = styled.TouchableOpacity`
-background:${({c}) => c ?? colors.blue};
-border:${({br}) => br ?? 'none'}; 
-justify-content: center;
-align-items: center;
-display: flex;
-margin-top: 5px;
-width: ${({w}) => w ?? '100%'};
-height: ${({h}) => h ?? '100%'};
-border-radius: 50px;
-margin-bottom: ${({mbt}) => mbt ?? '10px'};
+  background: ${({c}) => c ?? colors.blue};
+  border: ${({br}) => br ?? 'none'};
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 5px;
+  width: ${({w}) => w ?? '100%'};
+  height: ${({h}) => h ?? '100%'};
+  border-radius: 50px;
+  margin-bottom: ${({mbt}) => mbt ?? '10px'};
+`;
+export const ButtonIcon = styled.TouchableOpacity`
+  position: absolute;
+  zindex: 2;
+  right: 15;
+  top: 130;
 `;
 
 export const TextButton = styled.Text`
@@ -55,8 +61,16 @@ export const InputLabel = styled.Text`
   align-items: flex-start;
   color: ${colors.lettersGray};
   font-size: 15px;
-  margin-Top: 5px;
+  margin-top: 5px;
   left: 10px;
+`;
+export const ImageLabel = styled(InputLabel)`
+  font-weight: bold;
+  color: ${colors.white};
+  font-size: 25px;
+  width: ${({w}) => w ?? '200px'};
+  left: -50px;
+  top: -50px;
 `;
 
 export const FlexContainer = styled.View`
@@ -68,5 +82,4 @@ export const FlexContainer = styled.View`
   margin-bottom: ${({mbt}) => mbt ?? '10px'};
   width: ${({w}) => w ?? '100%'};
   height: ${({h}) => h ?? '100%'};
-  border: white;
 `;
