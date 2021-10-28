@@ -35,9 +35,9 @@ export const CustomButton = styled.TouchableOpacity`
 `;
 export const ButtonIcon = styled.TouchableOpacity`
   position: absolute;
-  zindex: 2;
-  right: 15;
-  top: 130;
+  zindex: 2px;
+  right: 15px;
+  top: 130px;
 `;
 
 export const TextButton = styled.Text`
@@ -59,10 +59,14 @@ export const InputText = styled.TextInput`
 export const InputLabel = styled.Text`
   justify-content: flex-start;
   align-items: flex-start;
-  color: ${colors.lettersGray};
-  font-size: 15px;
-  margin-top: 5px;
-  left: 10px;
+  color: ${({color}) => color ?? colors.lettersGray}; 
+  font-size: ${({fonz}) => fonz ?? '15px'}; 
+  font-weight: ${({fontt}) => fontt ?? 'normal'};
+  margin-bottom: ${({bot}) => bot ?? '0px'};
+  margin-top: ${({top}) => top ?? '5px'};
+  margin-left: ${({ml}) => ml ?? '0px'};
+  margin-right: ${({mr}) => mr ?? '0px'};
+  left:${({left}) => left ?? '10px'} 
 `;
 export const ImageLabel = styled(InputLabel)`
   font-weight: bold;
@@ -78,6 +82,7 @@ export const FlexContainer = styled.View`
   display: flex;
   justify-content: ${({jc}) => jc ?? 'space-around'};
   align-items: ${({alin}) => (alin ? 'flex-start' : 'center')};
+  flex-direction: ${({dir}) => (dir ?? 'column')};
   margin-top: ${({mt}) => mt ?? '1px'};
   margin-bottom: ${({mbt}) => mbt ?? '10px'};
   width: ${({w}) => w ?? '100%'};

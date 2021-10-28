@@ -1,8 +1,8 @@
 import React from 'react';
-import {Login} from './src/containers/Login';
+import { SelectLocation } from './src/containers/SelectLocation';
 const App = () => {
   return (
-    <Login></Login>
+    <SelectLocation></SelectLocation>
   );
 };
 export default App;
