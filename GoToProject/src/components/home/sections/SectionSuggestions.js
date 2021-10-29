@@ -6,6 +6,7 @@ import {ScrollListItem} from '../../../components/home/scrollList/Index';
 import {CustomTitle} from './CustomTitle';
 
 export const Suggestions = () => {
+  const desing = {width: 200, height: 200, margin: 9, borderRadius: 10};
   return (
     <FlexContainer h="380px" mbt="0px" mt="15px" aline="flex-start">
       <CustomTitle top="8px" mbt="-50px" text="SUGGESTIONS" />
@@ -16,12 +17,7 @@ export const Suggestions = () => {
               <View key={value.id}>
                 <ScrollListItem
                   withsize="200px"
-                  desing={{
-                    width: 200,
-                    height: 200,
-                    margin: 9,
-                    borderRadius: 10,
-                  }}
+                  desing={desing}
                   url={value.url}
                   textImage={value.name}
                 />
