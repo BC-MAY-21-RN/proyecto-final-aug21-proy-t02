@@ -8,9 +8,10 @@ export const Layout = styled.View`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  align-items: center;
+  align-items: ${({aline}) => (aline ? 'flex-start' : 'center')};
   padding: 20px;
 `;
+
 export const MainContainer = styled.SafeAreaView`
   display: flex;
   padding: 15px;
@@ -20,7 +21,6 @@ export const MainContainer = styled.SafeAreaView`
   height: 100%;
   width: 100%;
 `;
-
 export const CustomButton = styled.TouchableOpacity`
   background: ${({c}) => c ?? colors.blue};
   border: ${({br}) => br ?? 'none'};
@@ -33,37 +33,58 @@ export const CustomButton = styled.TouchableOpacity`
   border-radius: 50px;
   margin-bottom: ${({mbt}) => mbt ?? '10px'};
 `;
-export const ButtonIcon = styled.TouchableOpacity`
-  position: absolute;
-  zindex: 2;
-  right: 15;
-  top: 130;
+export const ButtonCategori = styled.TouchableOpacity`
+  margin: 5px;
+  padding: 12px 25px;
+  border-radius: 25px;
+  background: ${colors.darkGray};
 `;
 
+export const ButtonIcon = styled.TouchableOpacity`
+  position:${({pttn}) => pttn ??'absolute'};
+  z-index: 2;
+  top: ${({pt}) => pt ?? '130px'};
+  left: ${({pl}) => pl ?? '300px'};
+`;
 export const TextButton = styled.Text`
-  color: #fff;
+  color: ${({clt}) => clt ?? colors.white};
   font-family: 'Arial';
   font-size: 18px;
-  font-weight: bold;
+  font-weight: ${({fontt}) => fontt ?? 'bold'};
 `;
 
 export const InputText = styled.TextInput`
   background: ${colors.darkGray};
   width: 100%;
-  height: 35%;
+  height: ${({h}) => h ?? '35%'};
   margin-top: 10px;
   border-radius: 13px;
   padding-left: 10px;
   color: ${colors.white};
 `;
+
 export const InputLabel = styled.Text`
   justify-content: flex-start;
   align-items: flex-start;
-  color: ${colors.lettersGray};
-  font-size: 15px;
-  margin-top: 5px;
-  left: 10px;
+  color: ${({color}) => color ?? colors.lettersGray};
+  font-size: ${({fonz}) => fonz ?? '15px'};
+  font-weight: ${({fontt}) => fontt ?? 'normal'};
+  margin-bottom: ${({bot}) => bot ?? '0px'};
+  margin-top: ${({top}) => top ?? '5px'};
+  margin-left: ${({ml}) => ml ?? '0px'};
+  margin-right: ${({mr}) => mr ?? '0px'};
+  left: ${({left}) => left ?? '10px'};
 `;
+export const TitleText = styled(InputLabel)`
+  font-size: ${({fonz}) => fonz ?? '35px'};
+  font-weight: ${({fontt}) => fontt ?? 'bold'};
+  color: ${({color}) => color ?? colors.white};
+  margin-bottom: 10px;
+  width: ${({w}) => w ?? '100%'};
+  top: ${({top}) => top ?? '0px'};
+  left: ${({left}) => left ?? '0px'};
+`;
+
 export const ImageLabel = styled(InputLabel)`
   font-weight: bold;
   color: ${colors.white};
@@ -78,6 +99,7 @@ export const FlexContainer = styled.View`
   display: flex;
   justify-content: ${({jc}) => jc ?? 'space-around'};
   align-items: ${({alin}) => (alin ? 'flex-start' : 'center')};
+  flex-direction: ${({dir}) => dir ?? 'column'};
   margin-top: ${({mt}) => mt ?? '1px'};
   margin-bottom: ${({mbt}) => mbt ?? '10px'};
   width: ${({w}) => w ?? '100%'};
