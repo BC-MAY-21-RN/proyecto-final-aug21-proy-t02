@@ -1,5 +1,5 @@
 import React from 'react';
-import {TitleText} from '../../../components/styled';
+import {TitleText} from '../../styled';
 import {Image, TouchableOpacity} from 'react-native';
 
 export const ScrollListItem = ({
