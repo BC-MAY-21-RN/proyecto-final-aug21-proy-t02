@@ -17,8 +17,7 @@ import {ScrollListItem} from '../../components/home/scrollList/Index';
 import {Categories} from '../../components/home/categoris/index';
 import {Search} from '../../components/home/seacrh';
 import {Recents} from '../../components/home/sections/SectioRecent';
-import { Suggestions } from '../../components/home/sections/SectionSuggestions';
-
+import {Suggestions} from '../../components/home/sections/SectionSuggestions';
 export const Home = () => {
   return (
     <Layout aline="flex-start">
