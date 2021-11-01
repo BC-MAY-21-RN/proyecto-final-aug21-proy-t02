@@ -1,8 +1,10 @@
 import React from 'react';
-import { SelectLocation } from './src/containers/SelectLocation';
+import {Home} from './src/containers/home';
+import {Login} from './src/containers/Login';
+import { Menu } from './src/components/menu';
 const App = () => {
   return (
-    <SelectLocation></SelectLocation>
+    <Home></Home>   
   );
 };
 export default App;
