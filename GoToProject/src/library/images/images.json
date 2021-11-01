@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "url": "https://www.realestatemarket.com.mx/images/2019/04-Abril/2204/pueblos_magicos_turismo.jpg",
+    "name": "San Miguel de Allende"
+  },
+  {
+    "id": 2,
+    "url": "https://www.unionguanajuato.mx/wp-content/uploads/2021/04/lugares-turisticos-los-cabos.jpg",
+    "name": "Cancun de mexico"
+  },
+  {
+    "id": 3,
+    "url": "https://elnoticieroirapuato.com/wp-content/uploads/2020/12/Pueblos-M%C3%A1gicos.jpg",
+    "name": "Cascada"
+  },
+  {
+    "id": 4,
+    "url": "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_310,q_75,w_470/v1/clients/quintanaroo/image006_2f3184be-b004-4750-a118-b263cd72eef9.jpg",
+    "name": "Cozumel"
+  },
+  {
+    "id": 5,
+    "url": "https://content.r9cdn.net/rimg/dimg/78/70/001b704a-city-15939-163e0a462f2.jpg ",
+    "name": "Playa azul"
+  },
+  {
+    "id": 6,
+    "url": "https://i2.wp.com/blog.vivaaerobus.com/wp-content/uploads/2020/02/Lugares-para-visitar-en-Mexico.jpg",
+    "name": "Cancun"
+  },
+  {
+    "id": 7,
+    "url": "https://www.mexicodesconocido.com.mx/sites/default/files/fichas-destino/istock-178498781_portada.jpg",
+    "name": "Riviera maya"
+  },
+  {
+    "id": 8,
+    "url": "https://cdn1.intriper.com/wp-content/uploads/2019/07/15172213/cenote-samula.jpg",
+    "name": "Volcan colima"
+  },
+  {
+    "id": 9,
+    "url": "https://mexicodesconocidoviajes.mx/wp-content/uploads/2019/02/volcan-de-fuego-comala-ok.jpg",
+    "name": "Volcan paricutin"
+  }
+]
