@@ -1,9 +1,6 @@
 import React from 'react';
 import {RecordHeader} from '../../components/RecordHeader';
-import {
-
-  Layout,
-} from '../../components/styled';
+import { Layout } from '../../components/styled';
 import { CustomInput } from '../../components/customInput';
 import { ButtonCustom } from '../../components/ButtonCustom';
 
