@@ -10,12 +10,12 @@ import {
 export const Categories = () => {
   return (
     <>
-      <FlexContainer mt="5px" h="7%" dir="row" jc="space-between">
+      <FlexContainer mt="5px" h="50px" dir="row" jc="space-between">
         <TitleText top="5px" left="5px" fontt="500" fonz="25px">
           Categories of tourism
         </TitleText>
       </FlexContainer>
-      <FlexContainer h="9%" mbt="20px" dir="row" jc="space-between">
+      <FlexContainer  h="8%" mt="-10px" mbt="20px" dir="row" jc="space-between">
         <ScrollView horizontal={true}>
           {categories.map(value => {
             return (

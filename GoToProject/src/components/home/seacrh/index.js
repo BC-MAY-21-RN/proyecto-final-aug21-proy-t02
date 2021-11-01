@@ -17,7 +17,7 @@ export const Search = () => {
           placeholderTextColor={colors.lettersGray}
         />
         <ButtonIcon pt="20px" pl="310px">
-          <Icon name="search" style={{fontSize: 30, color: colors.white}} />
+          <Icon name="search" style={{fontSize: 30, color: colors.lettersGray}} />
         </ButtonIcon>
       </FlexContainer>
     </>

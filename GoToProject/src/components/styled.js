@@ -35,7 +35,7 @@ export const CustomButton = styled.TouchableOpacity`
 `;
 export const ButtonCategori = styled.TouchableOpacity`
   margin: 5px;
-  padding: 12px 25px;
+  padding: 9px 25px;
   border-radius: 25px;
   background: ${colors.darkGray};
 `;
@@ -61,6 +61,7 @@ export const InputText = styled.TextInput`
   border-radius: 13px;
   padding-left: 10px;
   color: ${colors.white};
+  font-size: 18px;
 `;
 
 export const InputLabel = styled.Text`
