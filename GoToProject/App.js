@@ -4,8 +4,7 @@ import {Login} from './src/containers/Login';
 import { Menu } from './src/components/menu';
 const App = () => {
   return (
-    <Home></Home>
-    
+    <Home></Home>   
   );
 };
 export default App;
