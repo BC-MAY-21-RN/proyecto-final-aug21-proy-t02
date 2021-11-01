@@ -6,8 +6,7 @@ import { ButtonCustom } from '../../components/ButtonCustom';
 
 export const SignUp = () => {
 
-  return (
-   
+  return (   
         <Layout>
           <RecordHeader title="Sign Up" />
           <CustomInput label="Full Name" />
