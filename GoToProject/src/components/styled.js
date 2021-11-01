@@ -57,7 +57,7 @@ export const TextButton = styled.Text`
 export const InputText = styled.TextInput`
   background: ${colors.darkGray};
   width: 100%;
-  height: ${({h}) => h ?? '55px'};
+  height: ${({height}) => height ?? '55px'};
   margin-top: 10px;
   border-radius: 13px;
   padding-left: 10px;

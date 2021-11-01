@@ -1,7 +1,7 @@
 import React from 'react';
 import {RecordHeader} from '../../components/RecordHeader';
 import { Layout } from '../../components/styled';
-import { CustomInput } from '../../components/customInput';
+import { CustomInput } from '../../components/CustomInput';
 import { ButtonCustom } from '../../components/ButtonCustom';
 
 export const SignUp = () => {
