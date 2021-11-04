@@ -13,7 +13,7 @@ export const RecordHeader = ({title}) =>{
             fonz="35px"
             color={colors.white}
             mr="150px"
-            ml="20px">
+            ml="15px">
             {title}
           </InputLabel>
       </FlexContainer>
