@@ -9,6 +9,7 @@ import {
   InputText,
   Layout
 } from '../../components/styled';
+import { SchedulesBlock } from '../../components/SchedulesBlock';
 
 export const WorkShedules = () => {
   return (
@@ -16,33 +17,7 @@ export const WorkShedules = () => {
       {({values}) => (
         <Layout>
           <RecordHeader title="Work schedules"></RecordHeader>
-          <FlexContainer
-            h="15%"
-            dir="row"
-            jc="space-between">
-              <FlexContainer
-                w="40%"
-                mbt="0px"
-                mt="0px"
-                jc="flex-start"
-                alin="flex-start">
-                  <InputLabel top="20px">Schedules</InputLabel>
-                  <InputText h="40px"></InputText>
-              </FlexContainer>
-              <InputLabel
-                mr="20px">
-                  to
-                </InputLabel>
-              <FlexContainer
-                w="40%"
-                mbt="0px"
-                mt="0px"
-                jc="flex-start"
-                alin="flex-start">
-                  <InputLabel top="20px">Schedules</InputLabel>
-                  <InputText h="40px"></InputText>
-              </FlexContainer>
-          </FlexContainer>
+          <SchedulesBlock/>
           <CustomInput label="Working days"></CustomInput>
           <CustomInput label="Costs it handles"></CustomInput>
           <ButtonCustom h="20%" mt="50px" text="Next"></ButtonCustom>
