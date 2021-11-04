@@ -1,5 +1,6 @@
 import {Formik} from 'formik';
 import React from 'react';
+import { CustomInput } from '../../components/CustomInput';
 import {RecordHeader} from '../../components/RecordHeader';
 import {
   FlexContainer,
@@ -10,28 +11,18 @@ import {
   TextButton
 } from '../../components/styled';
 
+import { ButtonCustom } from '../../components/ButtonCustom';
+
 export const AddNewSite = () => {
   return (
     <Formik initialValues={{}}>
       {({values}) => (
         <Layout>
           <RecordHeader title="Add a new site"></RecordHeader>
-          <FlexContainer
-            h="60%"
-            alin="Flex-start"
-            jc="flex-start">
-            <InputLabel top="20px">Site name</InputLabel>
-            <InputText h="60px"></InputText>
-            <InputLabel top="20px">Phone</InputLabel>
-            <InputText h="60px"></InputText>
-            <InputLabel top="20px">Select categories</InputLabel>
-            <InputText h="60px"></InputText>
-          </FlexContainer>
-          <FlexContainer h="20%">
-            <CustomButton h="40%">
-              <TextButton>Next</TextButton>
-            </CustomButton>
-          </FlexContainer>
+          <CustomInput label="Site name"/>
+          <CustomInput label="Phone"/>
+          <CustomInput label="Select categories"/>
+          <ButtonCustom h="20%" mt="50px" text="Next" />
         </Layout>
       )}
     </Formik>

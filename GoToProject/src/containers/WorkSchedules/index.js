@@ -1,13 +1,13 @@
 import {Formik} from 'formik';
 import React from 'react';
+import { CustomInput } from '../../components/CustomInput';
+import { ButtonCustom } from '../../components/ButtonCustom';
 import {RecordHeader} from '../../components/RecordHeader';
 import {
   FlexContainer,
   InputLabel,
   InputText,
-  Layout,
-  CustomButton,
-  TextButton
+  Layout
 } from '../../components/styled';
 
 export const WorkShedules = () => {
@@ -17,7 +17,7 @@ export const WorkShedules = () => {
         <Layout>
           <RecordHeader title="Work schedules"></RecordHeader>
           <FlexContainer
-            h="20%"
+            h="15%"
             dir="row"
             jc="space-between">
               <FlexContainer
@@ -27,11 +27,10 @@ export const WorkShedules = () => {
                 jc="flex-start"
                 alin="flex-start">
                   <InputLabel top="20px">Schedules</InputLabel>
-                  <InputText h="60px"></InputText>
+                  <InputText h="40px"></InputText>
               </FlexContainer>
               <InputLabel
-                mr="20px"
-                top="20px">
+                mr="20px">
                   to
                 </InputLabel>
               <FlexContainer
@@ -41,23 +40,12 @@ export const WorkShedules = () => {
                 jc="flex-start"
                 alin="flex-start">
                   <InputLabel top="20px">Schedules</InputLabel>
-                  <InputText h="60px"></InputText>
+                  <InputText h="40px"></InputText>
               </FlexContainer>
           </FlexContainer>
-          <FlexContainer
-            h="40%"
-            alin="Flex-start"
-            jc="flex-start">
-            <InputLabel>Working days</InputLabel>
-            <InputText h="60px"></InputText>
-            <InputLabel top="20px">Costs it handles</InputLabel>
-            <InputText h="60px"></InputText>
-          </FlexContainer>
-          <FlexContainer h="20%">
-            <CustomButton h="40%">
-              <TextButton>Next</TextButton>
-            </CustomButton>
-          </FlexContainer>
+          <CustomInput label="Working days"></CustomInput>
+          <CustomInput label="Costs it handles"></CustomInput>
+          <ButtonCustom h="20%" mt="50px" text="Next"></ButtonCustom>
         </Layout>
       )}
     </Formik>
