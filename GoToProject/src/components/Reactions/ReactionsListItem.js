@@ -5,7 +5,7 @@ import {
   CartImage,
   InfoTitle,
   TitleCart,
-  IconButton,
+  TouchableOpacity,
   Starts,
   TextStart,
 } from '../../containers/Reactions/styled';
@@ -29,9 +29,9 @@ export const ReactionList = ({url, name, appraisal, desciption}) => {
       <CartInfo h="100%" w="60%" dir="column" jc="space-between">
         <InfoTitle w="190px" h="60px" dir="row" jc="space-between">
           <TitleCart fonz="23px" w="125px" h="60px">{name}</TitleCart>
-          <IconButton>
+          <TouchableOpacity>
             <Icon name="heart" style={{fontSize: 23, color: colors.white}} />
-          </IconButton>
+          </TouchableOpacity>
         </InfoTitle>
         <TitleCart
           h="55px"

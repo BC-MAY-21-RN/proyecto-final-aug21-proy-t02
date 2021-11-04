@@ -32,7 +32,7 @@ export const InfoTitle = styled(FlexContainer)`
 export const TitleCart = styled(TitleText)`
   height: ${({h}) => h ?? 'auto'};
 `;
-export const IconButton = styled.TouchableOpacity`
+export const TouchableOpacity = styled.TouchableOpacity`
   background: ${colors.blue};
   align-items: center;
   justify-content: center;
