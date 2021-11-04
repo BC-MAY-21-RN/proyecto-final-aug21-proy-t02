@@ -102,9 +102,15 @@ export const FlexContainer = styled.View`
   justify-content: ${({jc}) => jc ?? 'space-around'};
   align-items: ${({alin}) => (alin ? 'flex-start' : 'center')};
   flex-direction: ${({dir}) => (dir ?? 'column')};
-  flex-direction: ${({dir}) => dir ?? 'column'};
   margin-top: ${({mt}) => mt ?? '1px'};
   margin-bottom: ${({mbt}) => mbt ?? '10px'};
   width: ${({w}) => w ?? '100%'};
   height: ${({h}) => h ?? '100%'};
+  border: white;
+`;
+
+export const CustomScrollView = styled.ScrollView`
+  display: flex;
+  flex-wrap: nowrap;
+  width: ${({width}) => width ?? '100%'};;
 `;
