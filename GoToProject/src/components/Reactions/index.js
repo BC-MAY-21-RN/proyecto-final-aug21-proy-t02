@@ -5,11 +5,13 @@ import {
   CartImage,
   InfoTitle,
   TitleCart,
+  TitleDescription,
   TouchableOpacity,
   Starts,
   TextStart,
 } from '../../containers/Reactions/styled';
 import {Image} from 'react-native';
+import { InfoTitleCart } from './InfoTitle';
 import Icon from 'react-native-ionicons';
 import {colors} from '../../library/constants/colors';
 export const ReactionList = ({url, name, appraisal, desciption}) => {
@@ -27,13 +29,11 @@ export const ReactionList = ({url, name, appraisal, desciption}) => {
         </Starts>
       </CartImage>
       <CartInfo h="100%" w="60%" dir="column" jc="space-between">
-        <InfoTitle w="190px" h="60px" dir="row" jc="space-between">
-          <TitleCart fonz="23px" w="125px" h="60px">{name}</TitleCart>
-          <TouchableOpacity>
-            <Icon name="heart" style={{fontSize: 23, color: colors.white}} />
-          </TouchableOpacity>
-        </InfoTitle>
-        <TitleCart
+        
+       
+        <InfoTitleCart name={name}/>
+      
+        <TitleDescription
           h="55px"
           fontt="400"
           color={colors.lettersGray}
@@ -42,7 +42,7 @@ export const ReactionList = ({url, name, appraisal, desciption}) => {
           left="-5px"
           fonz="14px">
           {desciption}
-        </TitleCart>
+        </TitleDescription>
       </CartInfo>
     </Cart>
   );

@@ -3,7 +3,7 @@ import {Layout} from '../../components/styled';
 import reactions from '../../library/images/reactions.json';
 import {ScrollView} from 'react-native';
 import {Menu} from '../../components/menu';
-import {ReactionList} from '../../components/Reactions/ReactionsListItem';
+import {ReactionList} from '../../components/Reactions';
 export const Reactions = () => {
   return (
     <Layout aline="flex-start">
