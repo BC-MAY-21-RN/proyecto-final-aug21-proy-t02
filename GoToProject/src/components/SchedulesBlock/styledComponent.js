@@ -7,7 +7,6 @@ export const SchedulesContainer = styled.View`
   flex:1;
   flex-direction: column;
   justify-content: center;
-  padding-horizontal: 10px;
 `;
 
 export const ScheduleBox = styled(InputText)`

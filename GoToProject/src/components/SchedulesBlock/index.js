@@ -12,6 +12,11 @@ export const SchedulesBlock = () => {
           <ScheduleTitle>Opening hours</ScheduleTitle>
           <ScheduleBox></ScheduleBox>
         </SchedulesContainer>
+        <InputLabel
+          mr="20px"
+          top="50px">
+            to
+        </InputLabel>
         <SchedulesContainer>
           <ScheduleTitle>Closing time</ScheduleTitle>
           <ScheduleBox></ScheduleBox>
