@@ -12,7 +12,7 @@ import Icon from 'react-native-ionicons';
 export const InfoTitleCart = ({name}) => {
   return (
     <InfoTitle w="190px" h="60px" dir="row" jc="space-between">
-      <TitleCart fonz="23px" w="125px" h="60px">
+      <TitleCart>
         {name}
       </TitleCart>
       <TouchableOpacity>

@@ -31,6 +31,10 @@ export const InfoTitle = styled(FlexContainer)`
 `;
 export const TitleCart = styled(TitleText)`
   height: ${({h}) => h ?? 'auto'};
+  width: 125px;
+  height: 60px;
+  font-size:23px;
+
 `;
 export const TitleDescription = styled(TitleText)`
   height: ${({h}) => h ?? 'auto'};
