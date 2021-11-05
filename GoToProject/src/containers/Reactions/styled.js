@@ -5,7 +5,7 @@ export const Cart = styled(FlexContainer)`
   border-radius: 8px;
 `;
 export const Starts = styled.View`
-  background: #59bcf4;
+  background: ${colors.transparentBlue};
   opacity: 0.8;
   width: 80px;
   height: 35px;
@@ -33,8 +33,7 @@ export const TitleCart = styled(TitleText)`
   height: ${({h}) => h ?? 'auto'};
   width: 125px;
   height: 60px;
-  font-size:23px;
-
+  font-size: 23px;
 `;
 export const TitleDescription = styled(TitleText)`
   height: ${({h}) => h ?? 'auto'};
