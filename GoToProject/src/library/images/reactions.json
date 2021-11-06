@@ -1,0 +1,58 @@
+[
+  {
+    "id": 0,
+    "url": "https://www.realestatemarket.com.mx/images/2019/04-Abril/2204/pueblos_magicos_turismo.jpg",
+    "name": "Plaza san fernando ",
+    "desciption": "Descriptivos son aquellos que caracterizan el aspecto de un elemento, que puede ser",
+    "appraisal": 4.3
+  },
+  {
+    "id": 1,
+    "url": "https://elnoticieroirapuato.com/wp-content/uploads/2020/12/Pueblos-M%C3%A1gicos.jpg",
+    "name": "Ricardo Palm",
+    "desciption": "Descriptivos son aquellos que caracterizan el aspecto de un elemento, que puede ser",
+    "appraisal": 3.5
+  },
+  {
+    "id": 2,
+    "url": "https://www.unionguanajuato.mx/wp-content/uploads/2021/04/lugares-turisticos-los-cabos.jpg",
+    "name": "C. José Enrique",
+    "desciption": "Descriptivos son aquellos que caracterizan el aspecto de un elemento, que puede ser",
+    "appraisal": 4.9
+  },
+  {
+    "id": 3,
+    "url": "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_310,q_75,w_470/v1/clients/quintanaroo/image006_2f3184be-b004-4750-a118-b263cd72eef9.jpg",
+    "name": "Vinos La Lic",
+    "desciption": "Descriptivos son aquellos que caracterizan el aspecto de un elemento, que puede ser",
+    "appraisal": 4.1
+  },
+  {
+    "id": 4,
+    "url": "https://content.r9cdn.net/rimg/dimg/78/70/001b704a-city-15939-163e0a462f2.jpg ",
+    "name": " Manuel Azpiroz",
+    "desciption": "Descriptivos son aquellos que caracterizan el aspecto de un elemento, que puede ser",
+    "appraisal": 3.9
+  },
+  {
+    "id": 5,
+    "url": "https://i2.wp.com/blog.vivaaerobus.com/wp-content/uploads/2020/02/Lugares-para-visitar-en-Mexico.jpg",
+    "name": "Nieve de Garrafa",
+    "desciption": "Descriptivos son aquellos que caracterizan el aspecto de un elemento, que puede ser",
+    "appraisal": 4.4
+  },
+  {
+    "id": 6,
+    "url": "https://www.mexicodesconocido.com.mx/sites/default/files/fichas-destino/istock-178498781_portada.jpg",
+    "name": " Del Istmo",
+    "desciption": "Descriptivos son aquellos que caracterizan el aspecto de un elemento, que puede ser",
+    "appraisal": 3.6
+  },
+  {
+    "id": 7,
+    "url": "https://cdn1.intriper.com/wp-content/uploads/2019/07/15172213/cenote-samula.jpg",
+    "name": "C. Mar Caspio",
+    "desciption": "Descriptivos son aquellos que caracterizan el aspecto de un elemento, que puede ser",
+    "appraisal": 4.9
+  }
+]
