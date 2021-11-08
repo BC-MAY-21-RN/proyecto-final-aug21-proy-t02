@@ -9,7 +9,11 @@ import {
   Layout,
   TitleText,
 } from '../../components/styled';
-import {CustomImage, ScrollContainer, DetailsText } from './styled';
+import {
+  CustomImage, 
+  ScrollContainer, 
+  DetailsText 
+} from './styled';
 
 const placeImg =
   'https://mexicodesconocidoviajes.mx/wp-content/uploads/2019/02/volcan-de-fuego-comala-ok.jpg';
