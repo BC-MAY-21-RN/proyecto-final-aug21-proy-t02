@@ -28,7 +28,7 @@ export const Home = () => {
       <Search />
       <Categories />
       <ScrollView>
-        <Recents title="RECENT" />
+        <Recents />
         <Suggestions />
       </ScrollView>
       <Menu />
