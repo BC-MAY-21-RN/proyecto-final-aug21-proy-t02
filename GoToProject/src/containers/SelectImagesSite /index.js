@@ -15,17 +15,12 @@ export const SelectImagesSite = () => {
   const [imagesThree, setImagesThree] = useState(false);
   const [imagesFourt, setImagesFourt] = useState(false);
   return (
-    <Formik initialValues={{}}>
-      {({values}) => (
+    <Formik initialValues={{}}>{({values}) => (
         <Layout>
           <RecordHeader title="Mages for the site "></RecordHeader>
-          <InputLabel left="-60px" bot="10px" fonz="20px">
-            Select the main image
-          </InputLabel>
+          <InputLabel left="-60px" bot="10px" fonz="20px">Select the main image</InputLabel>
           <ShowPrimaryImage state={setImagePrimary} value={imagePrimary} def={defaultImage}/>
-          <InputLabel left="-60px" bot="10px" top="25px" fonz="20px">
-            Select more 4 images
-          </InputLabel>
+          <InputLabel left="-60px" bot="10px" top="25px" fonz="20px">Select more 4 images</InputLabel>
           <ContainerImages>
             <ImgCustom state={setImagesOne} value={imagesOne} def={defaultImage} />
             <ImgCustom state={setImagesTwo} value={imagesTwo} def={defaultImage} />
