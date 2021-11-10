@@ -2,14 +2,7 @@ import {Alert} from 'react-native';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 export const OpenGaleria = (newImage, doAction) => {
   let action = '';
-  const options = {
-    StorageOptions: {
-      path: 'image',
-      mediaType: 'photo',
-    },
-    quality: 0.8,
-    includeBase64: true,
-  };
+  const options = { StorageOptions: {path: 'image', mediaType: 'photo', }, includeBase64: true, };
   if (doAction == true) {
     action = launchImageLibrary;
   } else {
@@ -21,9 +14,7 @@ export const OpenGaleria = (newImage, doAction) => {
     } else if (res.error) {
       Alert.alert('Image Piker has error', res.error);
     } else {
-      const source =
-        res.assets &&
-        res?.assets.map(({uri}) => {
+      const source = res.assets && res?.assets.map(({uri}) => {
           return uri;
         });
       newImage(source[0]);
