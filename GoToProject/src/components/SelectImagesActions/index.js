@@ -14,9 +14,9 @@ export const OpenGaleria = (newImage, doAction) => {
     } else if (res.error) {
       Alert.alert('Image Piker has error', res.error);
     } else {
-      const source = res.assets && res?.assets.map(({uri}) => {
-          return uri;
-        });
+      const source = res.assets && res?.assets.map(({uri}) => { 
+        return uri
+      });
       newImage(source[0]);
     }
   });
