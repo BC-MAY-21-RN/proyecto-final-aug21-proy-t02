@@ -10,6 +10,7 @@ import {Image} from 'react-native';
 import {Layout, InputLabel} from '../../components/styled';
 import {CustomIcon} from '../../components/CustomIcon';
 import {ImgCustom} from '../../components/SelectImagesActions/SelectCustomImage';
+import {ShowPrimaryImage} from '../../components/SelectImagesActions/SelectimagePrimary';
 export const SelectImagesSite = () => {
   const [defaultImage] = useState(primaryImage);
   const [imagePrimary, setImagePrimary] = useState(false);
@@ -25,20 +26,7 @@ export const SelectImagesSite = () => {
           <InputLabel left="-60px" bot="10px" fonz="20px">
             Select the main image
           </InputLabel>
-          <ContainerImage>
-            <Image
-              source={imagePrimary ? {uri: imagePrimary} : defaultImage}
-              style={{borderRadius: 5, width: 330, height: 140}}
-            />
-            <ImageButtons>
-              <ButtonAction onPress={() => OpenGaleria(setImagePrimary, true)}>
-                <CustomIcon name="image" size={50} color={colors.white} />
-              </ButtonAction>
-              <ButtonAction onPress={() => OpenGaleria(setImagePrimary, false)}>
-                <CustomIcon name="camera" size={50} color={colors.white}  />
-              </ButtonAction>
-            </ImageButtons>
-          </ContainerImage>
+          <ShowPrimaryImage state={setImagePrimary} value={imagePrimary} def={defaultImage}/>
           <InputLabel left="-60px" bot="10px" top="25px" fonz="20px">
             Select more 4 images
           </InputLabel>
