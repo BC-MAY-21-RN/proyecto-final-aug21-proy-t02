@@ -1,6 +1,6 @@
 import React from 'react';
 import {ButtonAction} from '../../containers/SelectImagesSite /styled';
-import {Image, View, Text, Alert} from 'react-native';
+import {Image, View} from 'react-native';
 import {CustomIcon} from '../CustomIcon';
 import {OpenGaleria} from '.';
 export const ImgCustom = ({state, value, def}) => {
