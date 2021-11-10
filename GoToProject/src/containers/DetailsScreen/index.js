@@ -1,7 +1,7 @@
 import React from 'react';
 import {Recents} from '../../components/home/sections/SectioRecent';
-import { MapContainer } from '../../components/Location/styledComponent';
-import { PlaceDetails } from '../../components/PlaceDetails';
+import {MapContainer} from '../../components/Location/styledComponent';
+import {PlaceDetails} from '../../components/PlaceDetails';
 import {
   CustomScrollView,
   FlexContainer,
@@ -9,11 +9,36 @@ import {
   Layout,
   TitleText,
 } from '../../components/styled';
-import {
-  CustomImage, 
-  ScrollContainer, 
-  DetailsText 
-} from './styled';
+import {CustomImage, ScrollContainer, DetailsText} from './styled';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import {Dimensions} from 'react-native';
+
+const {width, height} = Dimensions.get('window');
+
+const ASPECT_RATIO = width / height;
+const LATITUDE = 19.129579469349792;
+const LONGITUDE = -103.88428965974752;
+
+const GOOGLE_MAPS_APIKEY = 'AIzaSyB4SwDlMm4Dr2c7j5A-iRbFbAWxIKO-tOA';
+
+const markers = [
+  {
+    latitude: LATITUDE,
+    longitude: LONGITUDE,
+  },
+];
+
+const region = [
+  {
+    title: 'Piedra Acampanada',
+    coordinates: {
+      latitude: 19.129579469349792,
+      longitude: -103.88428965974752,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
+    },
+  },
+];
 
 const placeImg =
   'https://mexicodesconocidoviajes.mx/wp-content/uploads/2019/02/volcan-de-fuego-comala-ok.jpg';
@@ -37,9 +62,17 @@ export const DetailsScreen = () => {
           <FlexContainer h="240px">
             <Recents title="Gallery" />
           </FlexContainer>
-          <FlexContainer h="200px" alin >
+          <FlexContainer h="400px" alin>
             <InputLabel fonz="22px">Location</InputLabel>
-            <MapContainer />
+            <MapView
+              style={{ flex: 1, height: height, width: width, }}
+              provider={PROVIDER_GOOGLE}
+              //apikey={GOOGLE_MAPS_APIKEY}
+              initialRegion={{
+              latitude: 19.129579469349792,
+              longitude: -103.88428965974752,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421}}></MapView>
           </FlexContainer>
         </ScrollContainer>
       </CustomScrollView>
