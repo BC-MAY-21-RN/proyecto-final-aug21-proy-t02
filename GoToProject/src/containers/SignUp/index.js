@@ -18,7 +18,7 @@ const signUpInputs = [
 
 export const SignUp = () => {
   const inputList = signUpInputs.map(inputName => (
-    <CustomInput label={inputName.key} />    
+    <CustomInput label={inputName.key} key={inputName.key} />    
   ));
   return (
     <Layout>

@@ -6,10 +6,10 @@ export const Layout = styled.View`
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: ${({justifyCont}) => justifyCont ?? 'flex-start'};
   flex-direction: column;
   align-items: ${({aline}) => (aline ? 'flex-start' : 'center')};
-  padding: 20px;
+  padding: ${({padd}) => padd ?? '20px'};
 `;
 
 export const MainContainer = styled.SafeAreaView`
@@ -106,4 +106,10 @@ export const FlexContainer = styled.View`
   margin-bottom: ${({mbt}) => mbt ?? '10px'};
   width: ${({w}) => w ?? '100%'};
   height: ${({h}) => h ?? '100%'};
+`;
+
+export const CustomScrollView = styled.ScrollView`
+  display: flex;
+  flex-wrap: nowrap;
+  width: ${({width}) => width ?? '100%'};
 `;
