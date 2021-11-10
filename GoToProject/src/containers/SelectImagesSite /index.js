@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
 import {Formik} from 'formik';
-import { colors } from '../../library/constants/colors';
-import { ContainerImage, ContainerImages, ImageButtons, ButtonAction, } from './styled';
+import {  ContainerImages } from './styled';
 import {ButtonCustom} from '../../components/ButtonCustom';
 import {RecordHeader} from '../../components/RecordHeader';
 import primaryImage from '../../library/images/Galeria.jpeg';
-import {OpenGaleria} from '../../components/SelectImagesActions';
-import {Image} from 'react-native';
 import {Layout, InputLabel} from '../../components/styled';
-import {CustomIcon} from '../../components/CustomIcon';
 import {ImgCustom} from '../../components/SelectImagesActions/SelectCustomImage';
 import {ShowPrimaryImage} from '../../components/SelectImagesActions/SelectimagePrimary';
 export const SelectImagesSite = () => {
