@@ -6,7 +6,7 @@ import { Menu } from './src/components/menu';
 import { SignUp } from './src/containers/SignUp';
 import { WorkShedules } from './src/containers/WorkSchedules';
 import { SelectImagesSite } from './src/containers/SelectImagesSite ';
-
+import { Spiner } from './src/components/Spiner/inde';
 const App = () => {
   return(
     <SelectImagesSite></SelectImagesSite>

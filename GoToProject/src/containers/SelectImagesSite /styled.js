@@ -21,7 +21,6 @@ export const ImageButtons = styled.View`
   flex-direction: row;
   align-items: center;
   border-radius: 5px;
-  //opacity: 0.7;
   position: absolute;
   height: 50px;
   width: 160px;
