@@ -1,15 +1,13 @@
 import React from 'react';
 import {Login} from './src/containers/Login';
 import {SignUp} from './src/containers/SignUp/';
-
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer initialRouteName="Login">
-      <Stack.Navigator >
+      <Stack.Navigator>
         <Stack.Screen
           name="Login"
           component={Login}
