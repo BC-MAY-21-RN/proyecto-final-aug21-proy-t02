@@ -18,6 +18,8 @@ const {width, height} = Dimensions.get('window');
 const ASPECT_RATIO = width / height;
 const LATITUDE = 19.129579469349792;
 const LONGITUDE = -103.88428965974752;
+const LATITUDE_DELTA = 0.0922;
+const LONGITUDE_DELTA = 0.0421;
 
 const GOOGLE_MAPS_APIKEY = 'AIzaSyB4SwDlMm4Dr2c7j5A-iRbFbAWxIKO-tOA';
 
@@ -32,10 +34,10 @@ const region = [
   {
     title: 'Piedra Acampanada',
     coordinates: {
-      latitude: 19.129579469349792,
-      longitude: -103.88428965974752,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
+      latitude: LATITUDE,
+      longitude: LONGITUDE,
+      latitudeDelta: LATITUDE_DELTA,
+      longitudeDelta: LONGITUDE_DELTA,
     },
   },
 ];
@@ -65,14 +67,25 @@ export const DetailsScreen = () => {
           <FlexContainer h="400px" alin>
             <InputLabel fonz="22px">Location</InputLabel>
             <MapView
-              style={{ flex: 1, height: height, width: width, }}
+              style={{flex: 1, height: height, width: width}}
               provider={PROVIDER_GOOGLE}
-              //apikey={GOOGLE_MAPS_APIKEY}
+              scrollEnabled={true}
+              zoomEnabled={true}
+              pitchEnabled={true}
+              rotateEnabled={true}
               initialRegion={{
-              latitude: 19.129579469349792,
-              longitude: -103.88428965974752,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421}}></MapView>
+                latitude: 19.129579469349792,
+                longitude: -103.88428965974752,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+              }}>
+              <Marker
+                coordinate={{
+                  latitude: 19.129579469349792,
+                  longitude: -103.88428965974752,
+                }}
+                title={'Piedra Acampanada'}></Marker>
+            </MapView>
           </FlexContainer>
         </ScrollContainer>
       </CustomScrollView>
