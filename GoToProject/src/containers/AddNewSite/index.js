@@ -3,12 +3,7 @@ import React from 'react';
 import { CustomInput } from '../../components/CustomInput';
 import {RecordHeader} from '../../components/RecordHeader';
 import {
-  FlexContainer,
-  InputLabel,
-  InputText,
-  Layout,
-  CustomButton,
-  TextButton
+  Layout
 } from '../../components/styled';
 
 import { ButtonCustom } from '../../components/ButtonCustom';

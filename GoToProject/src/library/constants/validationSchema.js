@@ -34,3 +34,8 @@ export const addNewSite = Yup.object().shape({
     .max(20, 'Too Long!')
     .required(),
 });
+
+export const workSchedules = Yup.object().shape({
+  workingDays: Yup.string().min(15).max(25).required(),
+  costs: Yup.string().min(6).max(15).required(),
+});
