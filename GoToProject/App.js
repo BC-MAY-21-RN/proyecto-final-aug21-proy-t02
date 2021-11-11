@@ -1,8 +1,12 @@
 import React from 'react';
-import { WorkShedules } from './src/containers/WorkSchedules';
+import { Login } from './src/containers/Login'
+import { AddNewSite } from './src/containers/AddNewSite'
+import { SignUp } from './src/containers/SignUp';
 const App = () => {
   return (
-    <WorkShedules></WorkShedules>
+    // <SignUp></SignUp>
+    // <Login></Login>
+    <AddNewSite></AddNewSite>
   );
 };
 export default App;
