@@ -13,6 +13,8 @@ export const RecordHeader = ({title}) =>{
             fonz="35px"
             color={colors.white}
             mr="150px"
+            fontt="500"
+            left="30px"
             ml="15px">
             {title}
           </InputLabel>
