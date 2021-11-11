@@ -1,12 +1,14 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {BackButtonContainer} from './styledComponent';
 import {colors} from '../../library/constants/colors';
-import { CustomIcon } from '../CustomIcon';
+import {CustomIcon} from '../CustomIcon';
 
 export const BackButton = () => {
+  const navigation = useNavigation();
   return (
-    <BackButtonContainer>
-     <CustomIcon name="arrow-back" size={38} left={10} color={colors.white} />
+    <BackButtonContainer onPress={() => {navigation.navigate('Login')}}>
+      <CustomIcon name="arrow-back" size={38} left={10} color={colors.white} />
     </BackButtonContainer>
   );
 };
