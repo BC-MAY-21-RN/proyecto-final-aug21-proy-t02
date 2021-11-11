@@ -8,7 +8,7 @@ export const RecordHeader = ({title}) =>{
     <FlexContainer
         h="20%"
         dir="row">
-          <BackButton></BackButton>
+          <BackButton  ></BackButton>
           <InputLabel
             fonz="35px"
             color={colors.white}
