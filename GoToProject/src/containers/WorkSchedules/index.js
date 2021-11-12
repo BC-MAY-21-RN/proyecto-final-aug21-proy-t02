@@ -8,8 +8,10 @@ import {
 } from '../../components/styled';
 import { SchedulesBlock } from '../../components/SchedulesBlock';
 import { workSchedules } from '../../library/constants/validationSchema';
+import { workSchedule } from '../../library/constants/dataForm';
 
 export const WorkShedules = () => {
+  let inputWorkSchedules
   return (
     <Formik initialValues={{
       // opening:'',
@@ -20,26 +22,27 @@ export const WorkShedules = () => {
     validationSchema = { workSchedules }
     onSubmit={values => console.log(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
+        <>
         <Layout>
           <RecordHeader title="Work schedules"></RecordHeader>
           <SchedulesBlock/>
-          <CustomInput 
-            label="Working days"
-            name="workingDays"
-            onChangeText={handleChange('workingDays')}
-            value={values.workingDays}
-            hasErrors={errors.workingDays}
-            hasTouched={touched.workingDays}/>
-          <CustomInput 
-            label="Costs it handles"
-            name="costs"
-            onChangeText={handleChange('costs')}
-            value={values.costs}
-            hasErrors={errors.costs}
-            hasTouched={touched.costs}/>
+           {
+              inputWorkSchedules = workSchedule.map( entry => (
+                <CustomInput 
+                  label={entry.label}
+                  name={entry.name}
+                  onChangeText={handleChange(entry.onChangeText)}
+                  value={entry.value}
+                  value={values.value}
+                  hasErrors={errors[entry.hasErrors]}
+                  hasTouched={touched[entry.hasTouched]}
+                />
+              ))
+            }
           <ButtonCustom h="20%" mt="50px" text="Next"
             onPress={handleSubmit}/>
         </Layout>
+        </>
       )}
     </Formik>
   );
