@@ -5,6 +5,7 @@ import {
     ButtonCategori,
     TextButton,
   } from '../../styled';
+  import { colors } from '../../../library/constants/colors';
   import {ScrollView} from 'react-native';
   import categories from '../../../library/images/categories.json';
 export const Categories = () => {
@@ -20,7 +21,7 @@ export const Categories = () => {
           {categories.map(value => {
             return (
               <ButtonCategori key={value.id}>
-                <TextButton font="17px" fontt="100" clt="#8B8FA4">
+                <TextButton font="17px" fontt="100" clt={colors.lettersGray}>
                   {value.name}
                 </TextButton>
               </ButtonCategori>

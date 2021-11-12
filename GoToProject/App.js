@@ -14,19 +14,20 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
+  const header = {header: () => null}
   return (
     <NavigationContainer initialRouteName="Login">
       <Stack.Navigator>
-        <Stack.Screen name="Login"  component={Login} options={{header: () => null}} />
-        <Stack.Screen name="SignUp"  component={SignUp}  options={{header: () => null}} />
-        <Stack.Screen name="SelectLocation"  component={SelectLocation}  options={{header: () => null}} />
-        <Stack.Screen name="Home"  component={Home}  options={{header: () => null}} />
-        <Stack.Screen name="DetailsScreen"  component={DetailsScreen }  options={{header: () => null}} />
-        <Stack.Screen name="Reactions"  component={Reactions}  options={{header: () => null}} />
-        <Stack.Screen name="AddNewSite"  component={AddNewSite}  options={{header: () => null}} />
-        <Stack.Screen name="WorkShedules"  component={WorkShedules}  options={{header: () => null}} />
-        <Stack.Screen name="SiteInformation"  component={SiteInformation}  options={{header: () => null}} />
-        <Stack.Screen name="SelectImagesSite"  component={SelectImagesSite}  options={{header: () => null}} />
+        <Stack.Screen name="Login" component={Login} options={header} />
+        <Stack.Screen name="SignUp" component={SignUp} options={header} />
+        <Stack.Screen name="SelectLocation" component={SelectLocation} options={header} />
+        <Stack.Screen name="Home" component={Home} options={header}/>
+        <Stack.Screen name="DetailsScreen" component={DetailsScreen} options={header} />
+        <Stack.Screen name="Reactions" component={Reactions} options={header} />
+        <Stack.Screen name="AddNewSite" component={AddNewSite} options={header} />
+        <Stack.Screen name="WorkShedules" component={WorkShedules} options={header} />
+        <Stack.Screen name="SiteInformation" component={SiteInformation} options={header} />
+        <Stack.Screen name="SelectImagesSite" component={SelectImagesSite} options={header} />
       </Stack.Navigator>
     </NavigationContainer>
   );
