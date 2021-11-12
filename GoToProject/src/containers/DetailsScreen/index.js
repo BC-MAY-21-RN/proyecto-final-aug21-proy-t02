@@ -1,52 +1,28 @@
 import React from 'react';
+import {CustomMapView} from '../../components/CustomMapView';
 import {Recents} from '../../components/home/sections/SectioRecent';
-import {MapContainer} from '../../components/Location/styledComponent';
 import {PlaceDetails} from '../../components/PlaceDetails';
 import {
   CustomScrollView,
   FlexContainer,
-  InputLabel,
   Layout,
   TitleText,
 } from '../../components/styled';
-import {CustomImage, ScrollContainer, DetailsText} from './styled';
-import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
-import {Dimensions} from 'react-native';
-
-const {width, height} = Dimensions.get('window');
-
-const ASPECT_RATIO = width / height;
-const LATITUDE = 19.129579469349792;
-const LONGITUDE = -103.88428965974752;
-const LATITUDE_DELTA = 0.0922;
-const LONGITUDE_DELTA = 0.0421;
-
-const GOOGLE_MAPS_APIKEY = 'AIzaSyB4SwDlMm4Dr2c7j5A-iRbFbAWxIKO-tOA';
-
-const markers = [
-  {
-    latitude: LATITUDE,
-    longitude: LONGITUDE,
-  },
-];
-
-const region = [
-  {
-    title: 'Piedra Acampanada',
-    coordinates: {
-      latitude: LATITUDE,
-      longitude: LONGITUDE,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA,
-    },
-  },
-];
+import {
+  CustomImage, 
+  ScrollContainer, 
+  DetailsText
+} from './styled';
 
 const placeImg =
   'https://mexicodesconocidoviajes.mx/wp-content/uploads/2019/02/volcan-de-fuego-comala-ok.jpg';
 
 const Details =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+
+const LATITUDE = 19.129579469349792;
+const LONGITUDE = -103.88428965974752;
+const placeName = 'Piedra Acampanada';
 
 export const DetailsScreen = () => {
   return (
@@ -64,29 +40,11 @@ export const DetailsScreen = () => {
           <FlexContainer h="240px">
             <Recents title="Gallery" />
           </FlexContainer>
-          <FlexContainer h="400px" alin>
-            <InputLabel fonz="22px">Location</InputLabel>
-            <MapView
-              style={{flex: 1, height: height, width: width}}
-              provider={PROVIDER_GOOGLE}
-              scrollEnabled={true}
-              zoomEnabled={true}
-              pitchEnabled={true}
-              rotateEnabled={true}
-              initialRegion={{
-                latitude: 19.129579469349792,
-                longitude: -103.88428965974752,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
-              }}>
-              <Marker
-                coordinate={{
-                  latitude: 19.129579469349792,
-                  longitude: -103.88428965974752,
-                }}
-                title={'Piedra Acampanada'}></Marker>
-            </MapView>
-          </FlexContainer>
+          <CustomMapView 
+          mapHeight="400px" 
+          siteName={placeName}
+          siteLatitude={LATITUDE}
+          siteLongitude={LONGITUDE} />
         </ScrollContainer>
       </CustomScrollView>
     </Layout>
