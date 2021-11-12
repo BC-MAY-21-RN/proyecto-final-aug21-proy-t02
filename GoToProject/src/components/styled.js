@@ -6,10 +6,10 @@ export const Layout = styled.View`
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: ${({justifyCont}) => justifyCont ?? 'flex-start'};
   flex-direction: column;
   align-items: ${({aline}) => (aline ? 'flex-start' : 'center')};
-  padding: 20px;
+  padding: ${({padd}) => padd ?? '20px'};
 `;
 
 export const MainContainer = styled.SafeAreaView`
@@ -50,14 +50,14 @@ export const ButtonIcon = styled.TouchableOpacity`
 export const TextButton = styled.Text`
   color: ${({clt}) => clt ?? colors.white};
   font-family: 'Arial';
-  font-size: 18px;
+  font-size: 23px;
   font-weight: ${({fontt}) => fontt ?? 'bold'};
 `;
 
 export const InputText = styled.TextInput`
   background: ${colors.darkGray};
   width: 100%;
-  height: ${({h}) => h ?? '35%'};
+  height: ${({height}) => height ?? '55px'};
   margin-top: 10px;
   border-radius: 13px;
   padding-left: 10px;
@@ -106,4 +106,10 @@ export const FlexContainer = styled.View`
   margin-bottom: ${({mbt}) => mbt ?? '10px'};
   width: ${({w}) => w ?? '100%'};
   height: ${({h}) => h ?? '100%'};
+`;
+
+export const CustomScrollView = styled.ScrollView`
+  display: flex;
+  flex-wrap: nowrap;
+  width: ${({width}) => width ?? '100%'};
 `;

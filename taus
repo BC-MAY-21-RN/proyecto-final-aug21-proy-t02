@@ -1,0 +1,131 @@
+[33mcommit fd2fbfb4aec98a40cb45b91ef56209d56ec204a9[m[33m ([m[1;36mHEAD -> [m[1;32mfeacture#3/create-the-home-Screen[m[33m)[m
+Merge: 4fca542 a4dd31d
+Author: RaulMorales404 <r20160106@gmail.com>
+Date:   Fri Oct 29 13:23:09 2021 -0500
+
+    Merge branch 'feacture#3/create-the-home-Screen' of https://github.com/BC-MAY-21-RN/proyecto-final-aug21-proy-t02 into feacture#3/create-the-home-Screen
+
+[33mcommit 4fca542f5289298290dc9dac16905fb60b074e26[m
+Author: RaulMorales404 <r20160106@gmail.com>
+Date:   Fri Oct 29 13:23:01 2021 -0500
+
+    code climate correction
+
+[33mcommit a4dd31de76faa6157f7c7cd5da9ab23d3bc1a0e2[m[33m ([m[1;31morigin/feacture#3/create-the-home-Screen[m[33m)[m
+Merge: d6bdcca b020f32
+Author: Raul Morales Abarca <74264081+RaulMorales404@users.noreply.github.com>
+Date:   Fri Oct 29 12:47:05 2021 -0500
+
+    Merge branch 'master' into feacture#3/create-the-home-Screen
+
+[33mcommit d6bdccacf1551fb7f801822258246f0b41484519[m
+Author: RaulMorales404 <r20160106@gmail.com>
+Date:   Fri Oct 29 12:43:18 2021 -0500
+
+    cut and divide into sup components
+
+[33mcommit 58b88e6bcd01e17d4cd1e92aed66c146f087efdc[m
+Author: RaulMorales404 <r20160106@gmail.com>
+Date:   Fri Oct 29 10:05:56 2021 -0500
+
+    create the screen home
+
+[33mcommit b020f32a2e8dc6155b99471d83ad43f963cd8de5[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 02c47ef 30d4282
+Author: Raul Morales Abarca <74264081+RaulMorales404@users.noreply.github.com>
+Date:   Thu Oct 28 09:49:42 2021 -0500
+
+    Merge pull request #8 from BC-MAY-21-RN/feacture#2/create-the-Login-Screen
+    
+    Feacture#2/create the login screen
+
+[33mcommit 30d4282175b3765a028ad36a6bea985f7bd3dc92[m[33m ([m[1;31morigin/login[m[33m, [m[1;31morigin/feacture#2/create-the-Login-Screen[m[33m, [m[1;32mlogin[m[33m, [m[1;32mfeacture#2/create-the-Login-Screen[m[33m)[m
+Author: RaulMorales404 <r20160106@gmail.com>
+Date:   Wed Oct 27 10:51:35 2021 -0500
+
+     create login screen
+    
+    login screen create add inputs and buttons
+    
+    Co-authored-by: ljau <luis.jauregui.fl@gmail.com>
+    Co-authored-by: 96vladi <maidana.vladi@gmail.com>
+
+[33mcommit 74a5c815c7f490912ce37548c9c2c559a43e614e[m
+Author: Luis Jauregui <luis.jauregui.fl@gmail.com>
+Date:   Tue Oct 26 11:24:31 2021 -0500
+
+    fixed screen size
+
+[33mcommit 778e486f96db6b477bc201e1e406ac2dcd9dcfcf[m
+Author: Vladimir Maidana <38408590+96vladi@users.noreply.github.com>
+Date:   Tue Oct 26 11:30:43 2021 -0400
+
+    Login-Fixes
+
+[33mcommit 6045863d1d8a7d71ccb8041bc1b834278ff3f26f[m
+Author: RaulMorales404 <r20160106@gmail.com>
+Date:   Mon Oct 25 12:44:21 2021 -0500
+
+    create screen login .
+    >
+    Co-authored-by:96vladi <maidana.vladi@gmail.com>
+
+[33mcommit 02c47efc87893ee77063a1966fb949cc8a7b4bee[m[33m ([m[1;32mmaster[m[33m)[m
+Merge: 728ae59 9f249c9
+Author: Carlos Flores <carlos.flores@magmalabs.io>
+Date:   Fri Oct 22 14:57:17 2021 -0500
+
+    Merge pull request #7 from BC-MAY-21-RN/Feacture1-ProjectStructure
+    
+    Creation-Project-Structure
+
+[33mcommit 728ae591236fa6aa29946e221e95b08097f9da19[m
+Author: Carlos Flores <carlos.flores@magmalabs.io>
+Date:   Fri Oct 22 14:56:22 2021 -0500
+
+    Delete stats.yml
+
+[33mcommit 9f249c9a68f0575b0c9009145b37694cde1831a0[m[33m ([m[1;31morigin/Feacture1-ProjectStructure[m[33m)[m
+Author: Vladimir Maidana <38408590+96vladi@users.noreply.github.com>
+Date:   Fri Oct 22 13:01:55 2021 -0400
+
+    Creation-Project-Structure
+
+[33mcommit cdd67a0a26df798c546eb7671146f629f8ba20a1[m
+Author: Raul Morales Abarca <74264081+RaulMorales404@users.noreply.github.com>
+Date:   Thu Oct 21 19:18:29 2021 -0500
+
+    edit images
+    
+    some images have been corrected due to the slight change of the project
+
+[33mcommit 2cc5d2c7263ece6aed6f07ac8efcd37e8cbd66c3[m
+Author: Raul Morales Abarca <74264081+RaulMorales404@users.noreply.github.com>
+Date:   Thu Oct 21 12:51:24 2021 -0500
+
+    Correction of the project idea
+    
+    Project information has been edited
+    as problem solution and user types
+
+[33mcommit ddc0b85873e230ae724cd98f085a6a1b5f63dbdf[m
+Author: Raul Morales Abarca <74264081+RaulMorales404@users.noreply.github.com>
+Date:   Thu Oct 21 01:45:04 2021 -0500
+
+    Add as vista design
+    
+    the design patterns for the screens of the application were established
+
+[33mcommit fdcc758fe5ac2115ece480c4948ba425ef42e584[m
+Author: Raul Morales Abarca <74264081+RaulMorales404@users.noreply.github.com>
+Date:   Wed Oct 20 20:39:58 2021 -0500
+
+    Redare the documentation
+    
+    The final project documentation
+
+[33mcommit cde3eed9a913cd1ea16fc8d94dd072da57a96371[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Thu Oct 14 15:20:28 2021 +0000
+
+    Initial commit
