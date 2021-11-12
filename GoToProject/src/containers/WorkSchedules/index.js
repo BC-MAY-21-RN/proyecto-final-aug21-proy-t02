@@ -9,39 +9,28 @@ import {
 import { SchedulesBlock } from '../../components/SchedulesBlock';
 import { workSchedules } from '../../library/constants/validationSchema';
 import { workSchedule } from '../../library/constants/dataForm';
-
+import { Inputs } from '../../library/constants/methods';
 export const WorkShedules = () => {
-  let inputWorkSchedules
   return (
     <Formik initialValues={{
-      // opening:'',
-      // closing: '',
       workingDays: '',
       costs:'',
     }}
     validationSchema = { workSchedules }
     onSubmit={values => console.log(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
-        <>
         <Layout>
           <RecordHeader title="Work schedules"></RecordHeader>
           <SchedulesBlock/>
-           {
-              inputWorkSchedules = workSchedule.map( entry => (
-                <CustomInput 
-                  label={entry.label}
-                  name={entry.name}
-                  onChangeText={handleChange(entry.onChangeText)}
-                  value={values[entry.value]}
-                  hasErrors={errors[entry.hasErrors]}
-                  hasTouched={touched[entry.hasTouched]}
-                />
-              ))
-            }
+          <Inputs
+              obj = {workSchedule} 
+              handleChange={handleChange}
+              errors={errors} 
+              touched={touched} 
+              values={values}/>
           <ButtonCustom h="20%" mt="50px" text="Next"
             onPress={handleSubmit}/>
         </Layout>
-        </>
       )}
     </Formik>
   );

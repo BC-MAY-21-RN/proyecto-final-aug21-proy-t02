@@ -1,17 +1,15 @@
 import {Formik} from 'formik';
 import React from 'react';
-import { CustomInput } from '../../components/CustomInput';
 import {RecordHeader} from '../../components/RecordHeader';
 import {
   Layout
 } from '../../components/styled';
-
 import { ButtonCustom } from '../../components/ButtonCustom';
 import { addNewSite } from '../../library/constants/validationSchema';
 import { newSite } from '../../library/constants/dataForm';
+import { Inputs } from '../../library/constants/methods';
 
 export const AddNewSite = () => {
-  let inputNewSite
   return (
     <Formik 
       initialValues={{
@@ -22,25 +20,17 @@ export const AddNewSite = () => {
       validationSchema = { addNewSite }
       onSubmit={values => console.log(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
-        <>
         <Layout>
           <RecordHeader title="Add a new site"></RecordHeader>
-            {
-              inputNewSite = newSite.map( entry => (
-                <CustomInput 
-                  label={entry.label}
-                  name={entry.name}
-                  onChangeText={handleChange(entry.onChangeText)}
-                  value={values[entry.value]}
-                  hasErrors={errors[entry.hasErrors]}
-                  hasTouched={touched[entry.hasTouched]}
-                />
-              ))
-            }
+          <Inputs
+              obj = {newSite} 
+              handleChange={handleChange}
+              errors={errors} 
+              touched={touched} 
+              values={values}/>
           <ButtonCustom h="20%" mt="50px" text="Next" 
             onPress={handleSubmit}/>
         </Layout>
-        </>
       )}
     </Formik>
   );
