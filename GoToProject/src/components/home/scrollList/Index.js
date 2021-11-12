@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {TitleText} from '../../styled';
 import {Image, TouchableOpacity} from 'react-native';
 
@@ -8,8 +9,9 @@ export const ScrollListItem = ({
   textImage,
   withsize = '120px',
 }) => {
+  const navigation = useNavigation()
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={()=>{navigation.navigate('DetailsScreen')}}>
       <Image style={desing} source={{uri: url}} />
       <TitleText fonz="20px" fontt="400" w={withsize} left="15px">
         {textImage}

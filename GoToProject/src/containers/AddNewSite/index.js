@@ -18,11 +18,11 @@ export const AddNewSite = () => {
     <Formik initialValues={{}}>
       {({values}) => (
         <Layout>
-          <RecordHeader title="Add a new site"></RecordHeader>
+          <RecordHeader route="Home" title="Add a new site"></RecordHeader>
           <CustomInput label="Site name"/>
           <CustomInput label="Phone"/>
           <CustomInput label="Select categories"/>
-          <ButtonCustom h="20%" mt="50px" text="Next" />
+          <ButtonCustom ButtonRoute="WorkShedules" h="20%" mt="50px" text="Next" />
         </Layout>
       )}
     </Formik>

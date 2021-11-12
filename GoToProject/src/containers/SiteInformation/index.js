@@ -7,10 +7,10 @@ import { CustomInput } from '../../components/CustomInput';
 export const SiteInformation = () => {
   return(
     <Layout>
-      <RecordHeader title="Site Information"/>
+      <RecordHeader route="WorkShedules" title="Site Information"/>
       <CustomInput label="Site description"/>
       <LocationMap></LocationMap>
-      <ButtonCustom h="15%" text="Next"/>
+      <ButtonCustom  ButtonRoute="SelectImagesSite" h="20%" text="Next"/>
     </Layout>
   );
 };

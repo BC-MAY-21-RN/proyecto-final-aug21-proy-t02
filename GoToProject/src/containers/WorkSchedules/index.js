@@ -16,11 +16,12 @@ export const WorkShedules = () => {
     <Formik initialValues={{}}>
       {({values}) => (
         <Layout>
-          <RecordHeader title="Work schedules"></RecordHeader>
+          <RecordHeader route="AddNewSite" title="Work schedules"></RecordHeader>
           <SchedulesBlock/>
           <CustomInput label="Working days"></CustomInput>
           <CustomInput label="Costs it handles"></CustomInput>
-          <ButtonCustom h="20%" mt="50px" text="Next"></ButtonCustom>
+          <ButtonCustom ButtonRoute="SiteInformation" h="20%" mt="50px" text="Next"></ButtonCustom>
+        
         </Layout>
       )}
     </Formik>

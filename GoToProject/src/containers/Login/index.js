@@ -13,7 +13,7 @@ import Icon from 'react-native-ionicons';
 import {Image} from 'react-native';
 import {Formik} from 'formik';
 import {colors} from '../../library/constants/colors';
-export const Login = ({ navigation }) => {
+export const Login = ({navigation}) => {
   const [shwPassword, setShowPassword] = useState(true);
   return (
     <Formik
@@ -55,12 +55,19 @@ export const Login = ({ navigation }) => {
             </ButtonIcon>
           </FlexContainer>
           <FlexContainer h="25%">
-            <CustomButton br="3px solid #59bcf4;" w="100%" h="35%" c={colors.black}>
+            <CustomButton
+              br="3px solid #59bcf4;"
+              w="100%"
+              h="35%"
+              c={colors.black}
+              onPress={() => navigation.navigate('Home')}>
               <TextButton>Login</TextButton>
             </CustomButton>
-            <CustomButton br="3px solid black;" h="35%" mbt="15px"
-            onPress={()=>{navigation.navigate('SignUp')}}
-            >
+            <CustomButton
+              br="3px solid black;"
+              h="35%"
+              mbt="15px"
+              onPress={() => navigation.navigate('SignUp')}>
               <TextButton>Sign in</TextButton>
             </CustomButton>
           </FlexContainer>

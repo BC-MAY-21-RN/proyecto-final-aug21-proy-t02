@@ -13,7 +13,7 @@ export const Recents = ({title}) => {
           {images?.map(value => {
             return (
               <View key={value.id}>
-                <ScrollListItem url={value.url}  />
+                <ScrollListItem textImage={value.name} url={value.url}  />
               </View>
             );
           })}

@@ -17,7 +17,7 @@ export const SelectImagesSite = () => {
   return (
     <Formik initialValues={{}}>{({values}) => (
         <Layout>
-          <RecordHeader title="Mages for the site "></RecordHeader>
+          <RecordHeader route="SiteInformation" title="Mages for the site "></RecordHeader>
           <InputLabel left="-60px" bot="10px" fonz="20px">Select the main image</InputLabel>
           <ShowPrimaryImage state={setImagePrimary} value={imagePrimary} def={defaultImage}/>
           <InputLabel left="-60px" bot="10px" top="25px" fonz="20px">Select more 4 images</InputLabel>

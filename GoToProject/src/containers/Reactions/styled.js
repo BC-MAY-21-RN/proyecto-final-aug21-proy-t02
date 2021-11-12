@@ -18,6 +18,8 @@ export const TextStart = styled(TitleText)`
   align-items: center;
   justify-content: center;
   margin: 1px;
+  font-weight: 700;
+  font-size: 20px;
   position: relative;
   text-align: center;
 `;

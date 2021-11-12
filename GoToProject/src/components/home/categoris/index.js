@@ -11,7 +11,7 @@ export const Categories = () => {
   return (
     <>
       <FlexContainer mt="5px" h="50px" dir="row" jc="space-between">
-        <TitleText top="5px" left="5px" fontt="500" fonz="25px">
+        <TitleText top="4px"  left="5px" fontt="500" fonz="25px">
           Categories of tourism
         </TitleText>
       </FlexContainer>
@@ -20,7 +20,7 @@ export const Categories = () => {
           {categories.map(value => {
             return (
               <ButtonCategori key={value.id}>
-                <TextButton fontt="100" clt="#8B8FA4">
+                <TextButton font="17px" fontt="100" clt="#8B8FA4">
                   {value.name}
                 </TextButton>
               </ButtonCategori>
