@@ -32,8 +32,7 @@ export const WorkShedules = () => {
                   label={entry.label}
                   name={entry.name}
                   onChangeText={handleChange(entry.onChangeText)}
-                  value={entry.value}
-                  value={values.value}
+                  value={values[entry.value]}
                   hasErrors={errors[entry.hasErrors]}
                   hasTouched={touched[entry.hasTouched]}
                 />

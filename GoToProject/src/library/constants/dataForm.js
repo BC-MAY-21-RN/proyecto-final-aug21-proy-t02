@@ -43,3 +43,14 @@ export const workSchedule = [
     hasTouched:'costs',
   },
 ];
+
+export const siteInfor = [
+  {
+    label:"Site description",
+    name:"siteDescription",
+    onChangeText:'siteDescription',
+    value:'siteDescription',
+    hasErrors:'siteDescription',
+    hasTouched:'siteDescription',
+  },
+];

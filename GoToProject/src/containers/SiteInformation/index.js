@@ -6,7 +6,9 @@ import { Layout } from '../../components/styled';
 import { CustomInput } from '../../components/CustomInput';
 import {Formik} from 'formik';
 import { siteDecription } from '../../library/constants/validationSchema';
+import { siteInfor } from '../../library/constants/dataForm';
 export const SiteInformation = () => {
+  let inputdescription
   return(
     <Formik 
       initialValues={{
@@ -17,13 +19,18 @@ export const SiteInformation = () => {
       {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
           <RecordHeader title="Site Information"/>
-          <CustomInput 
-            label="Site description"
-            name="siteDescription"
-            onChangeText={handleChange('siteDescription')}
-            value={values.siteDescription}
-            hasErrors={errors.siteDescription}
-            hasTouched={touched.siteDescription}/>
+            {
+              inputdescription = siteInfor.map( entry => (
+                <CustomInput 
+                  label={entry.label}
+                  name={entry.name}
+                  onChangeText={handleChange(entry.onChangeText)}
+                  value={values[entry.value]}
+                  hasErrors={errors[entry.hasErrors]}
+                  hasTouched={touched[entry.hasTouched]}
+                />
+              ))
+            }
           <LocationMap></LocationMap>
           <ButtonCustom h="15%" text="Next"
             onPress={handleSubmit}/>
