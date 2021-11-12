@@ -8,6 +8,7 @@ import {
   Layout,
   TitleText,
 } from '../../components/styled';
+import * as mapConstants from '../../library/constants/mapConstants';
 import {
   CustomImage, 
   ScrollContainer, 
@@ -20,9 +21,7 @@ const placeImg =
 const Details =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
-const LATITUDE = 19.129579469349792;
-const LONGITUDE = -103.88428965974752;
-const placeName = 'Piedra Acampanada';
+
 
 export const DetailsScreen = () => {
   return (
@@ -42,9 +41,9 @@ export const DetailsScreen = () => {
           </FlexContainer>
           <CustomMapView 
           mapHeight="400px" 
-          siteName={placeName}
-          siteLatitude={LATITUDE}
-          siteLongitude={LONGITUDE} />
+          siteName={mapConstants.placeName}
+          siteLatitude={mapConstants.LATITUDE}
+          siteLongitude={mapConstants.LONGITUDE} />
         </ScrollContainer>
       </CustomScrollView>
     </Layout>
