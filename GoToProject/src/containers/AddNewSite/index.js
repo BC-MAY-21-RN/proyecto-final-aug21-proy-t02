@@ -1,28 +1,34 @@
 import {Formik} from 'formik';
 import React from 'react';
-import { CustomInput } from '../../components/CustomInput';
 import {RecordHeader} from '../../components/RecordHeader';
 import {
-  FlexContainer,
-  InputLabel,
-  InputText,
-  Layout,
-  CustomButton,
-  TextButton
+  Layout
 } from '../../components/styled';
-
 import { ButtonCustom } from '../../components/ButtonCustom';
+import { addNewSite } from '../../library/constants/validationSchema';
+import { newSite } from '../../library/constants/dataForm';
+import { Inputs } from '../../library/constants/methods';
 
 export const AddNewSite = () => {
   return (
-    <Formik initialValues={{}}>
-      {({values}) => (
+    <Formik 
+      initialValues={{
+        siteName: '',
+        phone: '',
+        categories: '',
+      }}
+      validationSchema = { addNewSite }
+      onSubmit={values => console.log(values)}>
+      {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
           <RecordHeader route="Home" title="Add a new site"></RecordHeader>
-          <CustomInput label="Site name"/>
-          <CustomInput label="Phone"/>
-          <CustomInput label="Select categories"/>
-          <ButtonCustom ButtonRoute="WorkShedules" h="20%" mt="50px" text="Next" />
+          <Inputs
+              obj = {newSite} 
+              handleChange={handleChange}
+              errors={errors} 
+              touched={touched} 
+              values={values}/>
+           <ButtonCustom ButtonRoute="WorkShedules" h="20%" mt="50px" text="Next" />
         </Layout>
       )}
     </Formik>

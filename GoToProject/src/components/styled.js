@@ -62,7 +62,7 @@ export const InputText = styled.TextInput`
   border-radius: 13px;
   padding-left: 10px;
   color: ${colors.white};
-  font-size: 18px;
+  font-size: 15px;
 `;
 
 export const InputLabel = styled.Text`
