@@ -4,23 +4,32 @@ import { CustomInput } from '../../components/CustomInput';
 import { ButtonCustom } from '../../components/ButtonCustom';
 import {RecordHeader} from '../../components/RecordHeader';
 import {
-  FlexContainer,
-  InputLabel,
-  InputText,
   Layout
 } from '../../components/styled';
 import { SchedulesBlock } from '../../components/SchedulesBlock';
-
+import { workSchedules } from '../../library/constants/validationSchema';
+import { workSchedule } from '../../library/constants/dataForm';
+import { Inputs } from '../../library/constants/methods';
 export const WorkShedules = () => {
   return (
-    <Formik initialValues={{}}>
-      {({values}) => (
+    <Formik initialValues={{
+      workingDays: '',
+      costs:'',
+    }}
+    validationSchema = { workSchedules }
+    onSubmit={values => console.log(values)}>
+      {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
           <RecordHeader title="Work schedules"></RecordHeader>
           <SchedulesBlock/>
-          <CustomInput label="Working days"></CustomInput>
-          <CustomInput label="Costs it handles"></CustomInput>
-          <ButtonCustom h="20%" mt="50px" text="Next"></ButtonCustom>
+          <Inputs
+              obj = {workSchedule} 
+              handleChange={handleChange}
+              errors={errors} 
+              touched={touched} 
+              values={values}/>
+          <ButtonCustom h="20%" mt="50px" text="Next"
+            onPress={handleSubmit}/>
         </Layout>
       )}
     </Formik>

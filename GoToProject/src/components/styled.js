@@ -50,7 +50,7 @@ export const ButtonIcon = styled.TouchableOpacity`
 export const TextButton = styled.Text`
   color: ${({clt}) => clt ?? colors.white};
   font-family: 'Arial';
-  font-size: 18px;
+  font-size: 23px;
   font-weight: ${({fontt}) => fontt ?? 'bold'};
 `;
 
@@ -62,7 +62,7 @@ export const InputText = styled.TextInput`
   border-radius: 13px;
   padding-left: 10px;
   color: ${colors.white};
-  font-size: 18px;
+  font-size: 15px;
 `;
 
 export const InputLabel = styled.Text`
