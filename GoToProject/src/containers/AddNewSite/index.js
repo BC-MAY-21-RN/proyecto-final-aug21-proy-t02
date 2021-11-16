@@ -21,15 +21,14 @@ export const AddNewSite = () => {
       onSubmit={values => console.log(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
-          <RecordHeader title="Add a new site"></RecordHeader>
+          <RecordHeader route="Home" title="Add a new site"></RecordHeader>
           <Inputs
               obj = {newSite} 
               handleChange={handleChange}
               errors={errors} 
               touched={touched} 
               values={values}/>
-          <ButtonCustom h="20%" mt="50px" text="Next" 
-            onPress={handleSubmit}/>
+           <ButtonCustom ButtonRoute="WorkShedules" h="20%" mt="50px" text="Next" />
         </Layout>
       )}
     </Formik>

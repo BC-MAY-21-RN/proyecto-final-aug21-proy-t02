@@ -10,7 +10,7 @@ export const SchedulesContainer = styled.View`
 `;
 
 export const ScheduleBox = styled(InputText)`
-  height: 40px;
+  height: 55px;
 `;
 
 export const ScheduleTitle = styled(InputLabel)`

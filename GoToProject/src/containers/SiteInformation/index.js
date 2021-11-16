@@ -17,7 +17,7 @@ export const SiteInformation = () => {
       onSubmit={values => console.log(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
-          <RecordHeader title="Site Information"/>
+          <RecordHeader route="WorkShedules"  title="Site Information"/>
             <Inputs
               obj = {siteInfor} 
               handleChange={handleChange}
@@ -25,8 +25,7 @@ export const SiteInformation = () => {
               touched={touched} 
               values={values}/>
           <LocationMap></LocationMap>
-          <ButtonCustom h="15%" text="Next"
-            onPress={handleSubmit}/>
+                <ButtonCustom  ButtonRoute="SelectImagesSite" h="20%" text="Next"/>
         </Layout>
       )}
     </Formik>

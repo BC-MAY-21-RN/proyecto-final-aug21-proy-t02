@@ -6,25 +6,25 @@ import {ButtonCustom} from '../../components/ButtonCustom';
 
 const signUpInputs = [
   {
-    key: 'Full name'
+    key: 'Full name',
   },
   {
-    key: 'Email'
+    key: 'Email',
   },
   {
-    key: 'Password'
+    key: 'Password',
   },
 ];
 
 export const SignUp = () => {
   const inputList = signUpInputs.map(inputName => (
-    <CustomInput label={inputName.key} key={inputName.key} />    
+    <CustomInput label={inputName.key} key={inputName.key} />
   ));
   return (
     <Layout>
-      <RecordHeader title="Sign Up" />
+      <RecordHeader  route="Login"  title="Sign Up" />
       {inputList}
-      <ButtonCustom h="20%" mt="50px" text="Sign Up" />
+      <ButtonCustom ButtonRoute="SelectLocation" h="20%" mt="50px" text="Next" />
     </Layout>
   );
 };
