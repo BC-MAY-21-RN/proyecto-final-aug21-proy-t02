@@ -20,7 +20,7 @@ export const WorkShedules = () => {
     onSubmit={values => console.log(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
-          <RecordHeader title="Work schedules"></RecordHeader>
+          <RecordHeader route="AddNewSite" title="Work schedules"></RecordHeader>
           <SchedulesBlock/>
           <Inputs
               obj = {workSchedule} 
@@ -28,8 +28,7 @@ export const WorkShedules = () => {
               errors={errors} 
               touched={touched} 
               values={values}/>
-          <ButtonCustom h="20%" mt="50px" text="Next"
-            onPress={handleSubmit}/>
+         <ButtonCustom ButtonRoute="SiteInformation" h="20%" mt="50px" text="Next"></ButtonCustom>
         </Layout>
       )}
     </Formik>

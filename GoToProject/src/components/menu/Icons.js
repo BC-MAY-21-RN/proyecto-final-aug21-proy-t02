@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-ionicons';
 import {View, TouchableOpacity} from 'react-native';
 import {colors} from '../../library/constants/colors';
 export const CustomIcons = ({
+  screen,
   name,
-  showState = false,
+  showState,
   action,
   designIcon = {fontSize: 40,top:-15, color: colors.white},
   design = {
@@ -15,8 +17,9 @@ export const CustomIcons = ({
     height: 5,
   },
 }) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={()=>{navigation.navigate(screen)}}>
       <Icon name={name} style={designIcon} />
       <View style={design}></View>
     </TouchableOpacity>
