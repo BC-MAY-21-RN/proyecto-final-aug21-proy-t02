@@ -19,7 +19,7 @@ export const Login = ({ navigation }) => {
     <Formik
       initialValues={{
         email: '',
-        password: '213213',
+        password: '',
       }}>
       {({values}) => (
         <Layout>
