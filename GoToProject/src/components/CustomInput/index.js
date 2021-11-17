@@ -12,7 +12,7 @@ export const CustomInput = ({
   hasTouched,
 }) => {
   return (
-    <FlexContainer h="15%" alin>
+    <FlexContainer h="15%" alin mbt="0" jc="center">
       <InputLabel>
         {label}</InputLabel>
       <InputText 

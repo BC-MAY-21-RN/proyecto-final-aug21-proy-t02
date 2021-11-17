@@ -4,10 +4,10 @@ import {useNavigation} from '@react-navigation/native';
 export const ButtonCustom = ({ButtonRoute, ...props}) => {
   const navigation = useNavigation();
   return (
-    <FlexContainer h={props.h} mt={props.mt}>
+    <FlexContainer h={props.h} mt={props.mt} mbt={props.mbt}>
       <CustomButton
         onPress={() =>navigation.navigate(ButtonRoute)}
-        h="45%">
+        h={props.hb}>
         <TextButton>{props.text}</TextButton>
       </CustomButton>
     </FlexContainer>

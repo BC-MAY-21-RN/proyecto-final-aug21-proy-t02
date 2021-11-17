@@ -25,7 +25,7 @@ export const SiteInformation = () => {
               touched={touched} 
               values={values}/>
           <LocationMap></LocationMap>
-                <ButtonCustom  ButtonRoute="SelectImagesSite" h="20%" text="Next"/>
+          <ButtonCustom  ButtonRoute="SelectImagesSite" h="20%" text="Next"/>
         </Layout>
       )}
     </Formik>

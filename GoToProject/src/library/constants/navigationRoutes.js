@@ -29,7 +29,7 @@ export const stackList = [
   {
     component:SignUp,
     name:"SignUp",
-    options: {...options, title: 'My Flights'},
+    options: {...options, headerShown: false},
   },
   {
     component:SelectLocation,
