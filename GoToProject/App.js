@@ -8,7 +8,7 @@ import { DetailsScreen } from './src/containers/DetailsScreen';
 import { AddNewSite } from './src/containers/AddNewSite';
 import { WorkShedules } from './src/containers/WorkSchedules';
 import { SiteInformation } from './src/containers/SiteInformation';
-import { SelectImagesSite } from './src/containers/SelectImagesSite ';
+import { SelectImagesSite } from './src/containers/SelectImagesSite';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {ButtonAction} from '../../containers/SelectImagesSite /styled';
+import {ButtonAction} from '../../containers/SelectImagesSite/styled';
 import {OpenGaleria} from '../../components/SelectImagesActions';
 import {colors} from '../../library/constants/colors';
 import {CustomIcon} from '../CustomIcon';

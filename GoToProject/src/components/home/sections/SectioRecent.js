@@ -4,7 +4,7 @@ import {ScrollView, View} from 'react-native';
 import images from '../../../library/images/images.json';
 import {ScrollListItem} from '../../../components/home/scrollList/Index';
 import {CustomTitle} from './CustomTitle';
-export const Recents = ({title}) => {
+export const Recents = ({title=" ",imageName=true}) => {
   return (
     <FlexContainer h="240px" mbt="10px" mt="0px" aline="flex-start">
       <CustomTitle top="2px" mbt="15px" text={title} />
@@ -13,7 +13,7 @@ export const Recents = ({title}) => {
           {images?.map(value => {
             return (
               <View key={value.id}>
-                <ScrollListItem textImage={value.name} url={value.url}  />
+                <ScrollListItem textImage={imageName ? value.name:''} url={value.url}  />
               </View>
             );
           })}
