@@ -3,7 +3,7 @@ import { colors } from "../../library/constants/colors";
 import { Layout } from "../styled";
 
 export const MapContainer = styled.View`
-  width: ${({w}) => w ?? '100%'}
+  width: ${({w}) => w ?? '100%'};
   background-color: ${({bg}) => bg ?? colors.gray};
   flex: 1;
 `;
@@ -13,7 +13,7 @@ export const HeadBoard = styled.View`
   background-color: ${({bg}) => bg ?? colors.black};
   flex-direction: row;
   justify-content: center;
-  align-items: center
+  align-items: center;
   padding-left: 10px;
 `;
 export const LocationContainer = styled(Layout)`
