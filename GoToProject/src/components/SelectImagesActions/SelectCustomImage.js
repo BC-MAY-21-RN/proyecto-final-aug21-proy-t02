@@ -1,5 +1,5 @@
 import React from 'react';
-import {ButtonAction} from '../../containers/SelectImagesSite /styled';
+import {ButtonAction} from '../../containers/SelectImagesSite/styled';
 import {Image, View} from 'react-native';
 import {CustomIcon} from '../CustomIcon';
 import {OpenGaleria} from '.';
