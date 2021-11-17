@@ -44,7 +44,7 @@ export const ButtonCategori = styled.TouchableOpacity`
 export const ButtonIcon = styled.TouchableOpacity`
   position:${({pttn}) => pttn ??'absolute'};
   z-index: 2;
-  top: ${({pt}) => pt ?? '130px'};
+  top: ${({pt}) => pt ?? '115px'};
   left: ${({pl}) => pl ?? '300px'};
 `;
 export const TextButton = styled.Text`

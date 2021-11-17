@@ -54,3 +54,22 @@ export const siteInfor = [
     hasTouched:'siteDescription',
   },
 ];
+
+export const loginInputs = [
+  {
+    label:"Email",
+    name:"email",
+    onChangeText:'email',
+    value:'email',
+    hasErrors:'email',
+    hasTouched:'email',
+  },
+  {
+    label:"Password",
+    name:"password",
+    onChangeText:'password',
+    value:'password',
+    hasErrors:'password',
+    hasTouched:'password',
+  }
+];

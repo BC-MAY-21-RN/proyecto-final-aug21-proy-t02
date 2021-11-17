@@ -13,6 +13,8 @@ import Icon from 'react-native-ionicons';
 import {Image} from 'react-native';
 import {Formik} from 'formik';
 import {colors} from '../../library/constants/colors';
+import { Inputs } from '../../library/constants/methods';
+import { loginInputs } from '../../library/constants/dataForm';
 export const Login = ({navigation}) => {
   const [shwPassword, setShowPassword] = useState(true);
   return (
@@ -21,7 +23,7 @@ export const Login = ({navigation}) => {
         email: '',
         password: '',
       }}>
-      {({values}) => (
+      {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
           <FlexContainer h="50%">
             <Image
@@ -34,13 +36,19 @@ export const Login = ({navigation}) => {
             />
             <ImageLabel>Go out with your family to new places</ImageLabel>
           </FlexContainer>
-          <FlexContainer h="25%" alin="flex-start">
-            <InputLabel>Email</InputLabel>
+            {/* <InputLabel>Email</InputLabel>
             <InputText value={values.email}></InputText>
             <InputLabel>Password</InputLabel>
             <InputText
               secureTextEntry={shwPassword}
-              value={values.password}></InputText>
+              value={values.password}></InputText> */}
+            <Inputs 
+              obj = {loginInputs}
+              handleChange={handleChange}
+              errors={errors} 
+              touched={touched} 
+              values={values}
+            />
             <ButtonIcon
               onPress={() => {
                 setShowPassword(!shwPassword);
@@ -53,7 +61,6 @@ export const Login = ({navigation}) => {
                 }}
               />
             </ButtonIcon>
-          </FlexContainer>
           <FlexContainer h="25%">
             <CustomButton
               br="3px solid #59bcf4;"
