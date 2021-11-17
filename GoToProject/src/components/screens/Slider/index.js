@@ -1,15 +1,12 @@
 import React, { useCallback, useState } from 'react';
 import { Text,View } from 'react-native';
 import Slider from 'rn-range-slider';
-
 import Thumb from '../../Slider/Thumb';
 import Rail from '../../Slider/Rail';
 import RailSelected from '../../Slider/RailSelected';
 import Notch from '../../Slider/Notch';
 import Label from '../../Slider/Label';
-
 import styles from './styles';
-
 export const SliderScreen = () => {
   const [low, setLow] = useState(0);
   const renderThumb = useCallback(() => <Thumb/>, []);
@@ -17,9 +14,7 @@ export const SliderScreen = () => {
   const renderRailSelected = useCallback(() => <RailSelected/>, []);
   const renderLabel = useCallback(value => <Label text={value}/>, []);
   const renderNotch = useCallback(() => <Notch/>, []);
-  const handleValueChange = useCallback((low, high) => {
-    setLow(low);
-  }, []);
+  const handleValueChange = useCallback((low) => {setLow(low)}, []);
   return <View style={styles.root}>
     <Slider 
       style={styles.slider}
@@ -36,7 +31,6 @@ export const SliderScreen = () => {
       onValueChanged={handleValueChange}
     />
       <Text style={styles.valueText}>{low}</Text>
-    
   </View>;
 };
 
