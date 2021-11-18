@@ -20,7 +20,7 @@ export const CustomInput = ({
         value={value}
         name={name}/>
       {hasErrors && hasTouched ? (
-        <InputLabel top="10px" color={colors.red}>
+        <InputLabel top="0px" color={colors.red}>
           {hasErrors}
         </InputLabel>
       ) : null}

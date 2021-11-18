@@ -28,7 +28,7 @@ export const AddNewSite = () => {
               errors={errors} 
               touched={touched} 
               values={values}/>
-           <ButtonCustom ButtonRoute="WorkShedules" h="20%" mt="50px" text="Next" />
+           <ButtonCustom ButtonRoute="WorkShedules" h="20%" mt="100px" text="Next" />
         </Layout>
       )}
     </Formik>

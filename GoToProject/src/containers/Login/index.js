@@ -1,11 +1,7 @@
 import React, {useState} from 'react';
 import {
-  CustomButton,
-  TextButton,
   ButtonIcon,
   ImageLabel,
-  InputLabel,
-  InputText,
   FlexContainer,
   Layout,
 } from '../../components/styled';
@@ -16,14 +12,23 @@ import {colors} from '../../library/constants/colors';
 import { Inputs } from '../../library/constants/methods';
 import { loginInputs } from '../../library/constants/dataForm';
 import { ButtonCustom } from '../../components/ButtonCustom';
+import { logInSchema } from '../../library/constants/validationSchema';
 export const Login = ({navigation}) => {
   const [shwPassword, setShowPassword] = useState(true);
+  const handleLogIn = (values) =>{
+    const { email, password } = values;
+    console.log(`email: ${email}`);
+    console.log(`password: ${password}`);
+    navigation.navigate('Home')
+  };
   return (
     <Formik
       initialValues={{
         email: '',
         password: '',
-      }}>
+      }}
+      validationSchema={ logInSchema }
+      onSubmit={ values => handleLogIn(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
           <FlexContainer h="50%">
@@ -56,9 +61,9 @@ export const Login = ({navigation}) => {
                 }}
               />
             </ButtonIcon>
-            <FlexContainer  h="20%" jc="center">
-              <ButtonCustom ButtonRoute="WorkShedules" h="50%" mt="0px" mbt="0" text="Login" hb="75%"/>
-              <ButtonCustom ButtonRoute="WorkShedules" h="50%" mt="0px" mbt="0" text="Next" hb="75%"/>
+            <FlexContainer  h="20%" jc="center" mt="10px">
+              <ButtonCustom onPress={handleSubmit} h="50%" mt="0px" mbt="0" text="Login" hb="75%"/>
+              <ButtonCustom ButtonRoute="SignUp" h="50%" mt="0px" mbt="0" text="Sign in" hb="75%"/>
             </FlexContainer>
         </Layout>
       )}
