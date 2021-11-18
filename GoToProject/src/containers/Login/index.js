@@ -18,9 +18,9 @@ export const Login = ({navigation}) => {
 
   /* at the moment it is only for testing */
   const handleLogIn = (values) =>{
-    const { email, password } = values;
-    console.log(`email: ${email}`);
-    console.log(`password: ${password}`);
+    // const { email, password } = values;
+    // console.log(`email: ${email}`);
+    // console.log(`password: ${password}`);
     navigation.navigate('Home')
   };
   return (

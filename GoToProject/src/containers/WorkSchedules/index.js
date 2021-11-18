@@ -13,9 +13,9 @@ export const WorkShedules = ({navigation}) => {
 
   /* at the moment it is only for testing */
   const handleWorkSchedules = (values) => {
-    const { workingDays, costs } = values;
-    console.log(`workingDays: ${workingDays}`);
-    console.log(`costs: ${costs}`);
+    // const { workingDays, costs } = values;
+    // console.log(`workingDays: ${workingDays}`);
+    // console.log(`costs: ${costs}`);
     navigation.navigate('SiteInformation');
   };
   return (
