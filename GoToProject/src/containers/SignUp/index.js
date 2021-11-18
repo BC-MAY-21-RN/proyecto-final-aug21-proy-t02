@@ -11,7 +11,7 @@ export const SignUp = ({navigation}) => {
 
   /* at the moment it is only for testing */
   const handleSignIn = () =>{
-    navigation.navigate('Home')
+    navigation.navigate('SelectLocation')
   };
 
   return (
@@ -34,7 +34,7 @@ export const SignUp = ({navigation}) => {
             values={values}
           />
           <FlexContainer  h="20%" jc="center" mt="10px">
-            <ButtonCustom onPress={handleSubmit} h="50%" mt="200px" mbt="0" text="Login" hb="75%"/>
+            <ButtonCustom onPress={handleSubmit} h="50%" mt="200px" mbt="0" text="Next" hb="75%"/>
           </FlexContainer>
         </Layout>
       )}
