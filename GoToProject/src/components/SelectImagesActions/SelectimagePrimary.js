@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  ContainerImage,
-  ImageButtons,
-} from '../../containers/SelectImagesSite/styled';
+import {ContainerImage,  ImageButtons} from '../../containers/SelectImagesSite/styled';
 import {Image} from 'react-native';
 import {ButtonSelectImage} from './ButtonSelectImage';
 export const ShowPrimaryImage = ({state, value, def}) => {
