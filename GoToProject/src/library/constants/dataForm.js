@@ -71,5 +71,6 @@ export const loginInputs = [
     value:'password',
     hasErrors:'password',
     hasTouched:'password',
+    secureTextEntry: true,
   }
 ];

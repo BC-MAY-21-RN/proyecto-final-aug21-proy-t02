@@ -15,6 +15,7 @@ export const Inputs = ({obj, handleChange, errors, touched, values}) => {
           value={values[entry.value]}
           hasErrors={errors[entry.hasErrors]}
           hasTouched={touched[entry.hasTouched]}
+          secureTextEntry={entry.secureTextEntry}
         />
       ))
     }

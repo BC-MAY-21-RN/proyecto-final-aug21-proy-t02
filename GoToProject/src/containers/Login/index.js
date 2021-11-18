@@ -15,7 +15,7 @@ import { ButtonCustom } from '../../components/ButtonCustom';
 import { logInSchema } from '../../library/constants/validationSchema';
 export const Login = ({navigation}) => {
   const [shwPassword, setShowPassword] = useState(true);
-  
+
   /* at the moment it is only for testing */
   const handleLogIn = (values) =>{
     const { email, password } = values;
@@ -54,6 +54,7 @@ export const Login = ({navigation}) => {
             <ButtonIcon
               onPress={() => {
                 setShowPassword(!shwPassword);
+                loginInputs[1].secureTextEntry=!shwPassword;
               }}>
               <Icon
                 name={shwPassword ? 'eye-off' : 'eye'}
