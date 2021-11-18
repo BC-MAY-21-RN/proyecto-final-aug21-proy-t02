@@ -15,6 +15,7 @@ import { ButtonCustom } from '../../components/ButtonCustom';
 import { logInSchema } from '../../library/constants/validationSchema';
 export const Login = ({navigation}) => {
   const [shwPassword, setShowPassword] = useState(true);
+  /* at the moment it is only for testing */
   const handleLogIn = (values) =>{
     const { email, password } = values;
     console.log(`email: ${email}`);

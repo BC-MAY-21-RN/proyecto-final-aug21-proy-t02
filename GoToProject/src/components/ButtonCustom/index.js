@@ -6,7 +6,6 @@ export const ButtonCustom = ({onPress, ButtonRoute, ...props}) => {
   return (
     <FlexContainer h={props.h} mt={props.mt} mbt={props.mbt}>
       <CustomButton
-        // onPress={() =>navigation.navigate(ButtonRoute)}
         onPress={onPress}
         h={props.hb}>
         <TextButton>{props.text}</TextButton>
