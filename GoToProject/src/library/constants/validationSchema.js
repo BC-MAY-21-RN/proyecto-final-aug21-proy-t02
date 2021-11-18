@@ -14,3 +14,13 @@ export const workSchedules = Yup.object().shape({
 export const siteDecription = Yup.object().shape({
   siteDescription: Yup.string().min(15).max(100).required(),
 });
+
+export const logInSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required(),
+  password: Yup.string()
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+      'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character',
+    )
+    .required(),
+});

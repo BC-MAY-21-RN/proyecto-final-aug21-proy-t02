@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   CustomButton,
-  InputLabel,
   Layout,
   TextButton,
 } from '../../components/styled';
