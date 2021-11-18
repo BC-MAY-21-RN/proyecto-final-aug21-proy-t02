@@ -17,10 +17,7 @@ export const Login = ({navigation}) => {
   const [shwPassword, setShowPassword] = useState(true);
 
   /* at the moment it is only for testing */
-  const handleLogIn = (values) =>{
-    // const { email, password } = values;
-    // console.log(`email: ${email}`);
-    // console.log(`password: ${password}`);
+  const handleLogIn = () =>{
     navigation.navigate('Home')
   };
   return (

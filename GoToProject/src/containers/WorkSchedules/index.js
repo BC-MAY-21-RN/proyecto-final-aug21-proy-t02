@@ -12,10 +12,7 @@ import { Inputs } from '../../library/constants/methods';
 export const WorkShedules = ({navigation}) => {
 
   /* at the moment it is only for testing */
-  const handleWorkSchedules = (values) => {
-    // const { workingDays, costs } = values;
-    // console.log(`workingDays: ${workingDays}`);
-    // console.log(`costs: ${costs}`);
+  const handleWorkSchedules = () => {
     navigation.navigate('SiteInformation');
   };
   return (
@@ -24,7 +21,7 @@ export const WorkShedules = ({navigation}) => {
       costs:'',
     }}
     validationSchema = { workSchedules }
-    onSubmit={values => handleWorkSchedules(values)}>
+    onSubmit={values => handleWorkSchedules()}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
           <RecordHeader route="AddNewSite" title="Work schedules"></RecordHeader>
