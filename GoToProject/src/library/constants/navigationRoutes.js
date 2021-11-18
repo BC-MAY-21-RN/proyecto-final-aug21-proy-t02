@@ -22,11 +22,6 @@ const options = {
 };
 export const stackList = [
   {
-    component:AddNewSite,
-    name:"AddNewSite",
-    options: {...options, headerShown: false},
-  },
-  {
     component: Login,
     name: 'Login',
     options: {...options, headerShown: false},
@@ -56,11 +51,11 @@ export const stackList = [
     name:"Reactions",
     options: {...options, headerShown: false},
   },
-  // {
-  //   component:AddNewSite,
-  //   name:"AddNewSite",
-  //   options: {...options, headerShown: false},
-  // },
+  {
+    component:AddNewSite,
+    name:"AddNewSite",
+    options: {...options, headerShown: false},
+  },
   {
     component:WorkShedules,
     name:"WorkShedules",

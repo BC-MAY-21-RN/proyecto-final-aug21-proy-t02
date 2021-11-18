@@ -1,6 +1,5 @@
 import {Formik} from 'formik';
 import React from 'react';
-import { CustomInput } from '../../components/CustomInput';
 import { ButtonCustom } from '../../components/ButtonCustom';
 import {RecordHeader} from '../../components/RecordHeader';
 import {
@@ -10,14 +9,22 @@ import { SchedulesBlock } from '../../components/SchedulesBlock';
 import { workSchedules } from '../../library/constants/validationSchema';
 import { workSchedule } from '../../library/constants/dataForm';
 import { Inputs } from '../../library/constants/methods';
-export const WorkShedules = () => {
+export const WorkShedules = ({navigation}) => {
+
+  /* at the moment it is only for testing */
+  const handleWorkSchedules = (values) => {
+    const { workingDays, costs } = values;
+    console.log(`workingDays: ${workingDays}`);
+    console.log(`costs: ${costs}`);
+    navigation.navigate('SiteInformation');
+  };
   return (
     <Formik initialValues={{
       workingDays: '',
       costs:'',
     }}
     validationSchema = { workSchedules }
-    onSubmit={values => console.log(values)}>
+    onSubmit={values => handleWorkSchedules(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
           <RecordHeader route="AddNewSite" title="Work schedules"></RecordHeader>
@@ -28,7 +35,7 @@ export const WorkShedules = () => {
               errors={errors} 
               touched={touched} 
               values={values}/>
-         <ButtonCustom ButtonRoute="SiteInformation" h="20%" mt="100px" text="Next"></ButtonCustom>
+         <ButtonCustom onPress={handleSubmit} h="20%" mt="100px" text="Next"></ButtonCustom>
         </Layout>
       )}
     </Formik>
