@@ -19,7 +19,6 @@ export const AddNewSite = ({navigation}) => {
     <Formik 
       initialValues={{
         siteName: '',
-        phone: '',
         categories: '',
       }}
       validationSchema = { addNewSite }
