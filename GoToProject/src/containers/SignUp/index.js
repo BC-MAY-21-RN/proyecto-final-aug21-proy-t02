@@ -24,7 +24,7 @@ export const SignUp = () => {
     <Layout>
       <RecordHeader  route="Login"  title="Sign Up" />
       {inputList}
-      <ButtonCustom ButtonRoute="SelectLocation" h="20%" mt="50px" text="Next" />
+      <ButtonCustom ButtonRoute="SelectLocation" h="20%" mt="100px" text="Next" />
     </Layout>
   );
 };

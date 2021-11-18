@@ -7,14 +7,20 @@ import {Formik} from 'formik';
 import { siteDecription } from '../../library/constants/validationSchema';
 import { siteInfor } from '../../library/constants/dataForm';
 import { Inputs } from '../../library/constants/methods';
-export const SiteInformation = () => {
+export const SiteInformation = ({navigation}) => {
+
+  /* at the moment it is only for testing */
+  const handleSiteInfor = (values) => {
+    console.log(values);
+    navigation.navigate('Home');
+  };
   return(
     <Formik 
       initialValues={{
         siteDescription: '',
       }}
       validationSchema = { siteDecription }
-      onSubmit={values => console.log(values)}>
+      onSubmit={values => handleSiteInfor(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
           <RecordHeader route="WorkShedules"  title="Site Information"/>
@@ -25,7 +31,7 @@ export const SiteInformation = () => {
               touched={touched} 
               values={values}/>
           <LocationMap></LocationMap>
-                <ButtonCustom  ButtonRoute="SelectImagesSite" h="20%" text="Next"/>
+          <ButtonCustom  onPress={handleSubmit} h="20%" text="Next"/>
         </Layout>
       )}
     </Formik>
