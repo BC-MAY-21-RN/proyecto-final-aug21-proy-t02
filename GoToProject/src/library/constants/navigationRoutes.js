@@ -22,15 +22,20 @@ const options = {
 };
 export const stackList = [
   {
-    component: Login,
-    name: 'Login',
-    options: {...options, headerShown: false},
-  },
-  {
     component:SignUp,
     name:"SignUp",
     options: {...options, headerShown: false},
   },
+  {
+    component: Login,
+    name: 'Login',
+    options: {...options, headerShown: false},
+  },
+  // {
+  //   component:SignUp,
+  //   name:"SignUp",
+  //   options: {...options, headerShown: false},
+  // },
   {
     component:SelectLocation,
     name:"SelectLocation",

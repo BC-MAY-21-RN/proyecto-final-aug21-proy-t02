@@ -63,7 +63,9 @@ export const Login = ({navigation}) => {
             </ButtonIcon>
             <FlexContainer  h="20%" jc="center" mt="10px">
               <ButtonCustom onPress={handleSubmit} h="50%" mt="0px" mbt="0" text="Login" hb="75%"/>
-              <ButtonCustom ButtonRoute="SignUp" h="50%" mt="0px" mbt="0" text="Sign in" hb="75%"/>
+              <ButtonCustom onPress={()=>{
+                    navigation.navigate('SignUp');
+                  }} h="50%" mt="0px" mbt="0" text="Sign in" hb="75%"/>
             </FlexContainer>
         </Layout>
       )}
