@@ -72,5 +72,33 @@ export const loginInputs = [
     hasErrors:'password',
     hasTouched:'password',
     secureTextEntry: true,
-  }
+  },
+];
+
+export const signUpInputs = [
+  {
+    label:"Full name",
+    name:"username",
+    onChangeText:'username',
+    value:'username',
+    hasErrors:'username',
+    hasTouched:'username',
+  },
+  {
+    label:"Email",
+    name:"email",
+    onChangeText:'email',
+    value:'email',
+    hasErrors:'email',
+    hasTouched:'email',
+  },
+  {
+    label:"Password",
+    name:"password",
+    onChangeText:'password',
+    value:'password',
+    hasErrors:'password',
+    hasTouched:'password',
+    secureTextEntry: true,
+  },
 ];
