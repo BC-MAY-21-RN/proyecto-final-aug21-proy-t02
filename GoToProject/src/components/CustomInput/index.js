@@ -10,17 +10,19 @@ export const CustomInput = ({
   value,
   hasErrors,
   hasTouched,
+  secureTextEntry
 }) => {
   return (
-    <FlexContainer h="15%" alin>
+    <FlexContainer h="15%" alin mbt="0" jc="center">
       <InputLabel>
         {label}</InputLabel>
       <InputText 
         onChangeText={onChangeText}
         value={value}
-        name={name}/>
+        name={name}
+        secureTextEntry={secureTextEntry}/>
       {hasErrors && hasTouched ? (
-        <InputLabel top="10px" color={colors.red}>
+        <InputLabel top="0px" color={colors.red}>
           {hasErrors}
         </InputLabel>
       ) : null}

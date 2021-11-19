@@ -9,7 +9,12 @@ import { addNewSite } from '../../library/constants/validationSchema';
 import { newSite } from '../../library/constants/dataForm';
 import { Inputs } from '../../library/constants/methods';
 
-export const AddNewSite = () => {
+export const AddNewSite = ({navigation}) => {
+
+  /* at the moment it is only for testing */
+  const handleNewSite = () => {
+    navigation.navigate('WorkShedules');
+  };
   return (
     <Formik 
       initialValues={{
@@ -18,7 +23,7 @@ export const AddNewSite = () => {
         categories: '',
       }}
       validationSchema = { addNewSite }
-      onSubmit={values => console.log(values)}>
+      onSubmit={values => handleNewSite(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
           <RecordHeader route="Home" title="Add a new site"></RecordHeader>
@@ -28,7 +33,7 @@ export const AddNewSite = () => {
               errors={errors} 
               touched={touched} 
               values={values}/>
-           <ButtonCustom ButtonRoute="WorkShedules" h="20%" mt="50px" text="Next" />
+           <ButtonCustom onPress={handleSubmit} h="20%" mt="100px" text="Next" />
         </Layout>
       )}
     </Formik>

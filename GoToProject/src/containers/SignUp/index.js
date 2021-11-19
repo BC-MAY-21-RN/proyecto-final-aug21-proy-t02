@@ -1,30 +1,43 @@
 import React from 'react';
-import {RecordHeader} from '../../components/RecordHeader';
 import {Layout} from '../../components/styled';
-import {CustomInput} from '../../components/CustomInput';
+import {Formik} from 'formik';
 import {ButtonCustom} from '../../components/ButtonCustom';
+import { signUpInputs } from '../../library/constants/dataForm';
+import { signUpSchema } from '../../library/constants/validationSchema';
+import { Inputs } from '../../library/constants/methods';
+import { FlexContainer } from '../../components/styled';
+import { RecordHeader } from '../../components/RecordHeader';
+export const SignUp = ({navigation}) => {
 
-const signUpInputs = [
-  {
-    key: 'Full name',
-  },
-  {
-    key: 'Email',
-  },
-  {
-    key: 'Password',
-  },
-];
+  /* at the moment it is only for testing */
+  const handleSignIn = () =>{
+    navigation.navigate('SelectLocation')
+  };
 
-export const SignUp = () => {
-  const inputList = signUpInputs.map(inputName => (
-    <CustomInput label={inputName.key} key={inputName.key} />
-  ));
   return (
-    <Layout>
-      <RecordHeader  route="Login"  title="Sign Up" />
-      {inputList}
-      <ButtonCustom ButtonRoute="SelectLocation" h="20%" mt="50px" text="Next" />
-    </Layout>
+    <Formik
+      initialValues={{
+        username: '',
+        email: '',
+        password: '',
+      }}
+      validationSchema={ signUpSchema }
+      onSubmit={ values => handleSignIn(values)}>
+      {({handleChange, handleSubmit, errors, touched, values}) => (
+        <Layout>
+          <RecordHeader  route="Login"  title="Sign Up" />
+          <Inputs 
+            obj = {signUpInputs}
+            handleChange={handleChange}
+            errors={errors} 
+            touched={touched} 
+            values={values}
+          />
+          <FlexContainer  h="20%" jc="center" mt="10px">
+            <ButtonCustom onPress={handleSubmit} h="50%" mt="200px" mbt="0" text="Next" hb="75%"/>
+          </FlexContainer>
+        </Layout>
+      )}
+    </Formik>
   );
 };

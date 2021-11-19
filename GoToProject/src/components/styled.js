@@ -29,7 +29,7 @@ export const CustomButton = styled.TouchableOpacity`
   display: flex;
   margin-top: 5px;
   width: ${({w}) => w ?? '100%'};
-  height: ${({h}) => h ?? '100%'};
+  height: ${({h}) => h ?? '45%'};
   border-radius: 50px;
   margin-bottom: ${({mbt}) => mbt ?? '10px'};
 `;
@@ -44,8 +44,8 @@ export const ButtonCategori = styled.TouchableOpacity`
 export const ButtonIcon = styled.TouchableOpacity`
   position:${({pttn}) => pttn ??'absolute'};
   z-index: 2;
-  top: ${({pt}) => pt ?? '130px'};
-  left: ${({pl}) => pl ?? '300px'};
+  top: ${({pt}) => pt ?? '541px'};
+  left: ${({pl}) => pl ?? '330px'};
 `;
 export const TextButton = styled.Text`
   color: ${({clt}) => clt ?? colors.white};
@@ -57,7 +57,7 @@ export const TextButton = styled.Text`
 export const InputText = styled.TextInput`
   background: ${colors.darkGray};
   width: 100%;
-  height: ${({height}) => height ?? '55px'};
+  height: ${({height}) => height ?? '45px'};
   margin-top: 10px;
   border-radius: 13px;
   padding-left: 10px;

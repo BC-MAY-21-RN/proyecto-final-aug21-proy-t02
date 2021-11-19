@@ -1,11 +1,7 @@
 import React, {useState} from 'react';
 import {
-  CustomButton,
-  TextButton,
   ButtonIcon,
   ImageLabel,
-  InputLabel,
-  InputText,
   FlexContainer,
   Layout,
 } from '../../components/styled';
@@ -13,15 +9,26 @@ import Icon from 'react-native-ionicons';
 import {Image} from 'react-native';
 import {Formik} from 'formik';
 import {colors} from '../../library/constants/colors';
+import { Inputs } from '../../library/constants/methods';
+import { loginInputs } from '../../library/constants/dataForm';
+import { ButtonCustom } from '../../components/ButtonCustom';
+import { logInSchema } from '../../library/constants/validationSchema';
 export const Login = ({navigation}) => {
   const [shwPassword, setShowPassword] = useState(true);
+
+  /* at the moment it is only for testing */
+  const handleLogIn = () =>{
+    navigation.navigate('Home')
+  };
   return (
     <Formik
       initialValues={{
         email: '',
         password: '',
-      }}>
-      {({values}) => (
+      }}
+      validationSchema={ logInSchema }
+      onSubmit={ values => handleLogIn(values)}>
+      {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
           <FlexContainer h="50%">
             <Image
@@ -34,16 +41,17 @@ export const Login = ({navigation}) => {
             />
             <ImageLabel>Go out with your family to new places</ImageLabel>
           </FlexContainer>
-          <FlexContainer h="25%" alin="flex-start">
-            <InputLabel>Email</InputLabel>
-            <InputText value={values.email}></InputText>
-            <InputLabel>Password</InputLabel>
-            <InputText
-              secureTextEntry={shwPassword}
-              value={values.password}></InputText>
+            <Inputs 
+              obj = {loginInputs}
+              handleChange={handleChange}
+              errors={errors} 
+              touched={touched} 
+              values={values}
+            />
             <ButtonIcon
               onPress={() => {
                 setShowPassword(!shwPassword);
+                loginInputs[1].secureTextEntry=!shwPassword;
               }}>
               <Icon
                 name={shwPassword ? 'eye-off' : 'eye'}
@@ -53,24 +61,12 @@ export const Login = ({navigation}) => {
                 }}
               />
             </ButtonIcon>
-          </FlexContainer>
-          <FlexContainer h="25%">
-            <CustomButton
-              br="3px solid #59bcf4;"
-              w="100%"
-              h="35%"
-              c={colors.black}
-              onPress={() => navigation.navigate('Home')}>
-              <TextButton>Login</TextButton>
-            </CustomButton>
-            <CustomButton
-              br="3px solid black;"
-              h="35%"
-              mbt="15px"
-              onPress={() => navigation.navigate('SignUp')}>
-              <TextButton>Sign in</TextButton>
-            </CustomButton>
-          </FlexContainer>
+            <FlexContainer  h="20%" jc="center" mt="10px">
+              <ButtonCustom onPress={handleSubmit} h="50%" mt="0px" mbt="0" text="Login" hb="75%"/>
+              <ButtonCustom onPress={()=>{
+                    navigation.navigate('SignUp');
+                  }} h="50%" mt="0px" mbt="0" text="Sign in" hb="75%"/>
+            </FlexContainer>
         </Layout>
       )}
     </Formik>
