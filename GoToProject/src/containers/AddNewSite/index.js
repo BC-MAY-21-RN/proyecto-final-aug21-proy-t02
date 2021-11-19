@@ -12,11 +12,7 @@ import { Inputs } from '../../library/constants/methods';
 export const AddNewSite = ({navigation}) => {
 
   /* at the moment it is only for testing */
-  const handleNewSite = (values) => {
-    const {siteName, phone, categories} = values;
-    console.log(`siteName: ${siteName}`);
-    console.log(`phone: ${phone}`);
-    console.log(`categories: ${categories}`);
+  const handleNewSite = () => {
     navigation.navigate('WorkShedules');
   };
   return (
