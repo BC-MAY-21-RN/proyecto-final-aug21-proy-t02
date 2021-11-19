@@ -3,7 +3,6 @@ import Icon from 'react-native-ionicons';
 import {ButtonIcon} from '../styled';
 import {colors} from '../../library/constants/colors';
 import {FlexContainer, InputLabel, InputText, ContainerImput} from '../styled';
-
 export const CustomInput = ({
   label,
   name,
@@ -32,19 +31,12 @@ export const CustomInput = ({
           <ButtonIcon pl="88%" pt="45px" onPress={actionPassword}>
             <Icon
               name={shwPassword ? 'eye-off' : 'eye'}
-              style={{
-                fontSize: 30,
-                color: colors.lettersGray,
-              }}
-            />
+              style={{ fontSize: 30, color: colors.lettersGray,}} />
           </ButtonIcon>
         ) : null}
       </ContainerImput>
-
       {hasErrors && hasTouched ? (
-        <InputLabel top="-15px" color={colors.red}>
-          {hasErrors}
-        </InputLabel>
+         <InputLabel top="-15px" color={colors.red}> {hasErrors} </InputLabel>
       ) : null}
     </FlexContainer>
   );
