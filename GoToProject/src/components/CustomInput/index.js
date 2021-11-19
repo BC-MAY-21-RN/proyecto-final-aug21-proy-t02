@@ -1,7 +1,8 @@
 import React from 'react';
-import { colors } from '../../library/constants/colors';
-import {FlexContainer, InputLabel, InputText} from '../styled';
-
+import Icon from 'react-native-ionicons';
+import {ButtonIcon} from '../styled';
+import {colors} from '../../library/constants/colors';
+import {FlexContainer, InputLabel, InputText, ContainerImput} from '../styled';
 
 export const CustomInput = ({
   label,
@@ -10,19 +11,38 @@ export const CustomInput = ({
   value,
   hasErrors,
   hasTouched,
-  secureTextEntry
+  secureTextEntry,
+  actionPassword,
+  shwPassword,
+  showEye,
+  eye,
 }) => {
   return (
     <FlexContainer h="15%" alin mbt="0" jc="center">
-      <InputLabel>
-        {label}</InputLabel>
-      <InputText 
-        onChangeText={onChangeText}
-        value={value}
-        name={name}
-        secureTextEntry={secureTextEntry}/>
+      <ContainerImput>
+        <InputLabel>{label}</InputLabel>
+        <InputText
+          height="50px"
+          onChangeText={onChangeText}
+          value={value}
+          name={name}
+          secureTextEntry={secureTextEntry}
+        />
+        {eye && showEye ? (
+          <ButtonIcon pl="88%" pt="45px" onPress={actionPassword}>
+            <Icon
+              name={shwPassword ? 'eye-off' : 'eye'}
+              style={{
+                fontSize: 30,
+                color: colors.lettersGray,
+              }}
+            />
+          </ButtonIcon>
+        ) : null}
+      </ContainerImput>
+
       {hasErrors && hasTouched ? (
-        <InputLabel top="0px" color={colors.red}>
+        <InputLabel top="-15px" color={colors.red}>
           {hasErrors}
         </InputLabel>
       ) : null}

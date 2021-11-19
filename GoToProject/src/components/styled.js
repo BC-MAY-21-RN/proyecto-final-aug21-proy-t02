@@ -34,6 +34,7 @@ export const CustomButton = styled.TouchableOpacity`
   margin-bottom: ${({mbt}) => mbt ?? '10px'};
 `;
 
+
 export const ButtonCategori = styled.TouchableOpacity`
   margin: 5px;
   padding: 9px 25px;
@@ -44,6 +45,7 @@ export const ButtonCategori = styled.TouchableOpacity`
 export const ButtonIcon = styled.TouchableOpacity`
   position:${({pttn}) => pttn ??'absolute'};
   z-index: 2;
+
   top: ${({pt}) => pt ?? '541px'};
   left: ${({pl}) => pl ?? '330px'};
 `;
@@ -107,7 +109,13 @@ export const FlexContainer = styled.View`
   width: ${({w}) => w ?? '100%'};
   height: ${({h}) => h ?? '100%'};
 `;
-
+export const ContainerImput = styled.View`
+ width: ${({w}) => w ?? '100%'};
+  height: ${({h}) => h ?? '100%'};
+  margin-top: 10px;
+  
+  
+`;
 export const CustomScrollView = styled.ScrollView`
   display: flex;
   flex-wrap: nowrap;
