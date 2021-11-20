@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-ionicons';
 import {ButtonIcon} from '../styled';
+import {ShowPassword} from './ShowPassword';
 import {colors} from '../../library/constants/colors';
 import {FlexContainer, InputLabel, InputText, ContainerImput} from '../styled';
 export const CustomInput = ({
@@ -12,7 +13,7 @@ export const CustomInput = ({
   hasTouched,
   secureTextEntry,
   actionPassword,
-  shwPassword,
+  showPassword,
   showEye,
   eye,
 }) => {
@@ -28,15 +29,13 @@ export const CustomInput = ({
           secureTextEntry={secureTextEntry}
         />
         {eye && showEye ? (
-          <ButtonIcon pl="88%" pt="45px" onPress={actionPassword}>
-            <Icon
-              name={shwPassword ? 'eye-off' : 'eye'}
-              style={{ fontSize: 30, color: colors.lettersGray,}} />
-          </ButtonIcon>
+          <ShowPassword showPassword={showPassword} action={actionPassword} />
         ) : null}
       </ContainerImput>
       {hasErrors && hasTouched ? (
-         <InputLabel top="-15px" color={colors.red}> {hasErrors} </InputLabel>
+        <InputLabel top="-15px" color={colors.red}>
+          {hasErrors}
+        </InputLabel>
       ) : null}
     </FlexContainer>
   );

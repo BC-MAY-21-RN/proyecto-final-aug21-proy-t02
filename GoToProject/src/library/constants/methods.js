@@ -8,7 +8,7 @@ export const Inputs = ({
   touched,
   values,
   actionPassword,
-  shwPassword,
+  showPassword,
   showEye=false
 }) => {
   let ouputs;
@@ -26,7 +26,7 @@ export const Inputs = ({
             hasTouched={touched[entry.hasTouched]}
             secureTextEntry={entry.secureTextEntry}
             actionPassword={actionPassword}
-            shwPassword={shwPassword}
+            showPassword={showPassword}
             showEye={showEye}
             eye={index && 1 ? true : false}
           />

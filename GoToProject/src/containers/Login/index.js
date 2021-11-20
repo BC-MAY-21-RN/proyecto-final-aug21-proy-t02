@@ -45,7 +45,7 @@ export const Login = ({navigation}) => {
               values={values}
               showEye={true}
               actionPassword={handleInputPassword}
-              shwPassword={shwPassword}
+              showPassword={shwPassword}
             />
             <FlexContainer  h="20%" jc="center" mt="25px">
               <ButtonCustom onPress={handleSubmit} h="56%" color={true} mt="0px" mbt="0" text="Login" hb="80%"/>
