@@ -7,21 +7,12 @@ import { signUpSchema } from '../../library/constants/validationSchema';
 import { Inputs } from '../../library/constants/methods';
 import { FlexContainer } from '../../components/styled';
 import { RecordHeader } from '../../components/RecordHeader';
-import { register } from '../../library/methods/auth';
+
 export const SignUp = ({navigation}) => {
 
   /* at the moment it is only for testing */
   const handleSignIn = (values) =>{
-    const { email, password, username } = values;
-    register(email, password, username)
-    .then(() => {
-      console.log("registrado")
-    })
-    .catch(()=>{
-      console.log("error")
-    });
-    navigation.navigate('SelectLocation')
-    console.log(values)
+    navigation.navigate('SelectLocation', {values})
   };
 
   return (
