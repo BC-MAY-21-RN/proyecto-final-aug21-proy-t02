@@ -13,9 +13,11 @@ import { SafeAreaView } from 'react-native';
 
 export const SelectLocation = ({route: {params}, navigation}) => {
   const { email, password, username } = params.values;
+  const latitude= "11.21181";
+  const length= "-12.12";
   const [status, setStatus] = useState(false);
   const handleSelectLocation = () =>{
-    register(email, password, username)
+    register(email, password, username, latitude, length)
     .then(() => {
       setStatus(true);
       setTimeout(() => {
