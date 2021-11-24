@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import {
-  ButtonIcon,
   ImageLabel,
   FlexContainer,
   Layout,
 } from '../../components/styled';
-import Icon from 'react-native-ionicons';
 import {Image} from 'react-native';
 import {Formik} from 'formik';
 import { Inputs } from '../../library/constants/methods';
@@ -14,7 +12,6 @@ import { ButtonCustom } from '../../components/ButtonCustom';
 import { logInSchema } from '../../library/constants/validationSchema';
 export const Login = ({navigation}) => {
   const [shwPassword, setShowPassword] = useState(true);
-  /* at the moment it is only for testing */
   const handleLogIn = () => navigation.navigate('Home');
   const handleInputPassword = () => {
     setShowPassword(!shwPassword);
