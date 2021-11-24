@@ -7,11 +7,12 @@ import { signUpSchema } from '../../library/constants/validationSchema';
 import { Inputs } from '../../library/constants/methods';
 import { FlexContainer } from '../../components/styled';
 import { RecordHeader } from '../../components/RecordHeader';
+
 export const SignUp = ({navigation}) => {
 
   /* at the moment it is only for testing */
-  const handleSignIn = () =>{
-    navigation.navigate('SelectLocation')
+  const handleSignIn = (values) =>{
+    navigation.navigate('SelectLocation', {values})
   };
 
   return (

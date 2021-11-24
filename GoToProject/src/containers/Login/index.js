@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import {
-  ButtonIcon,
   ImageLabel,
   FlexContainer,
   Layout,
 } from '../../components/styled';
-import Icon from 'react-native-ionicons';
 import {Image} from 'react-native';
 import {Formik} from 'formik';
 import { Inputs } from '../../library/constants/methods';
@@ -14,7 +12,6 @@ import { ButtonCustom } from '../../components/ButtonCustom';
 import { logInSchema } from '../../library/constants/validationSchema';
 export const Login = ({navigation}) => {
   const [shwPassword, setShowPassword] = useState(true);
-  /* at the moment it is only for testing */
   const handleLogIn = () => navigation.navigate('Home');
   const handleInputPassword = () => {
     setShowPassword(!shwPassword);
@@ -49,7 +46,7 @@ export const Login = ({navigation}) => {
             />
             <FlexContainer  h="20%" jc="center" mt="25px">
               <ButtonCustom onPress={handleSubmit} h="56%" color={true} mt="0px" mbt="0" text="Login" hb="80%"/>
-              <ButtonCustom ButtonRoute="SignUp" h="55%"  mt="0px" mbt="0" text="Sign in" hb="80%"/>
+              <ButtonCustom onPress={()=>{ navigation.navigate('SignUp'); }} h="55%"  mt="0px" mbt="0" text="Sign in" hb="80%"/>
             </FlexContainer>
         </Layout>
       )}
