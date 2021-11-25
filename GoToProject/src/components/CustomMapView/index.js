@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {FlexContainer, InputLabel} from '../styled';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import * as mapConstants from '../../library/constants/mapConstants';
-import Geolocation from 'react-native-geolocation-service';
 
 export const CustomMapView = ({
   mapHeight,
@@ -10,7 +9,9 @@ export const CustomMapView = ({
   siteLatitude,
   siteLongitude,
   siteName,
+  onSiteChange,
 }) => {
+
   const [position, setPosition] = useState({
     latitude: siteLatitude,
     longitude: siteLongitude,
@@ -18,17 +19,14 @@ export const CustomMapView = ({
     longitudeDelta: 0.0421,
   });
 
-  useEffect(() => {
-    Geolocation.getCurrentPosition(pos => {
-      const crd = pos.coords;
-      setPosition({
-        latitude: crd.latitude,
-        longitude: crd.longitude,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      });
-    })
-  }, []);
+  const CustomMarker = (() => {
+    return(
+    <Marker
+    title={siteName}
+    coordinate={{latitude: position.latitude, longitude: position.longitude}}
+  />)
+  })
+ 
   return (
     <FlexContainer h={mapHeight} w={mapWidth} alin>
       <InputLabel fonz="22px">Location</InputLabel>
@@ -43,15 +41,11 @@ export const CustomMapView = ({
         zoomEnabled={true}
         pitchEnabled={true}
         rotateEnabled={true}
-        region={position}
+        initialRegion={position}
         showsUserLocation={true}
-        onRegionChangeComplete={setPosition}
-        // onPress={console.log(position)}
+        onRegionChange={onSiteChange ? setPosition : undefined}
         >
-        <Marker
-          title={siteName}
-          coordinate={{latitude: position.latitude, longitude: position.longitude}}
-        />
+        {CustomMarker()}
       </MapView>
     </FlexContainer>
   );

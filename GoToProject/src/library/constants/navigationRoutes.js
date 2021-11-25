@@ -22,8 +22,8 @@ const options = {
 };
 export const stackList = [
   {
-    component:DetailsScreen,
-    name:"DetailsScreen",
+    component:SelectLocation,
+    name:"SelectLocation",
     options: {...options, headerShown: false},
   },
   {
@@ -41,21 +41,21 @@ export const stackList = [
   //   name:"SignUp",
   //   options: {...options, headerShown: false},
   // },
-  {
-    component:SelectLocation,
-    name:"SelectLocation",
-    options: {...options, headerShown: false},
-  },
+  // {
+  //   component:SelectLocation,
+  //   name:"SelectLocation",
+  //   options: {...options, headerShown: false},
+  // },
   {
     component:Home,
     name:"Home",
     options: {...options, headerShown: false},
   },
-  // {
-  //   component:DetailsScreen,
-  //   name:"DetailsScreen",
-  //   options: {...options, headerShown: false},
-  // },
+  {
+    component:DetailsScreen,
+    name:"DetailsScreen",
+    options: {...options, headerShown: false},
+  },
   {
     component:Reactions,
     name:"Reactions",
