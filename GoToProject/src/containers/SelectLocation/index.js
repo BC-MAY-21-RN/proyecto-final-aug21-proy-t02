@@ -26,7 +26,12 @@ export const SelectLocation = () => {
     longitude: -103.5,
   });
 
+  const [locationLoaded, setLocationLoaded] = useState(false);
+
+  
+
   useEffect(() => {
+    if (!locationLoaded){
     const getLocation = async () => {
       return await Geolocation.getCurrentPosition(
         currentPosition => {
@@ -34,6 +39,7 @@ export const SelectLocation = () => {
             latitude: currentPosition.coords.latitude,
             longitude: currentPosition.coords.longitude,
           });
+          setLocationLoaded(true);
         },
         null,
         {
@@ -44,19 +50,25 @@ export const SelectLocation = () => {
         ).catch(err => console.log('THIS IS AN ERROR', err));
       };
       getLocation();
-    }),
-    [];
+    }}),[];
     console.log(position);
     
-    return (
-    <Layout>
-      <RecordHeader route="SignUp" title="Select your location"></RecordHeader>
-      <CustomMapView
+    const loadMap = (() => {
+      return(
+        <CustomMapView
         mapHeight="350px"
         mapWidt="100%"
         siteLatitude={position.latitude}
         siteLongitude={position.longitude}
-        onSiteChange={true}/>
+        onSiteChange={true}>
+          {console.log("this is your pos", position)}
+          </CustomMapView>)
+    })
+
+    return (
+    <Layout>
+      <RecordHeader route="SignUp" title="Select your location"></RecordHeader>
+      {locationLoaded ? loadMap() : undefined}
       <FlexContainer h="20%">
         <CustomButton h="40%">
           <TextButton>Sign up</TextButton>
