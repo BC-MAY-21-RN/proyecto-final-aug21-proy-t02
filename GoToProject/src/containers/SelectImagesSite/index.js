@@ -7,13 +7,20 @@ import primaryImage from '../../library/images/Galeria.jpeg';
 import {Layout, InputLabel} from '../../components/styled';
 import {ImgCustom} from '../../components/SelectImagesActions/SelectCustomImage';
 import {ShowPrimaryImage} from '../../components/SelectImagesActions/SelectimagePrimary';
+import { Spiner } from '../../components/Spiner/inde';
 export const SelectImagesSite = () => {
   const [defaultImage] = useState(primaryImage);
+  const [isLoading,setIsLoading] = useState(false);
   const [imagePrimary, setImagePrimary] = useState(false);
   const [imagesOne, setImagesOne] = useState(false);
   const [imagesTwo, setImagesTwo] = useState(false);
   const [imagesThree, setImagesThree] = useState(false);
   const [imagesFourt, setImagesFourt] = useState(false);
+
+  const activeIsLoading = () => {
+    setIsLoading(!isLoading);
+  }
+  
   return (
     <Formik initialValues={{}}>{({values}) => (
         <Layout>
@@ -28,7 +35,9 @@ export const SelectImagesSite = () => {
             <ImgCustom state={setImagesFourt} value={imagesFourt} def={defaultImage} />
           </ContainerImages>
           <ButtonCustom h="20%" mt="30px" text="Add"></ButtonCustom>
+          {isLoading ? <Spiner /> : null}
         </Layout>
+        
       )}
     </Formik>
   );

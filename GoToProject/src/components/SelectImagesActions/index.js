@@ -1,11 +1,20 @@
 import {Alert} from 'react-native';
+import {uploadImage} from '../../library/methods/firebaseUploadImage.';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import nextId from 'react-id-generator';
+
 export const OpenGaleria = (newImage, doAction) => {
   let action = '';
-  const options = {    StorageOptions: {path: 'image', mediaType: 'photo'},
-    includeBase64: true,
+  const options = {
+    StorageOptions: {
+      path: 'image',
+      mediaType: 'photo',
+    },
+    includeBase64: false,
   };
-   action = doAction ? launchImageLibrary : launchCamera;
+
+  action = doAction ? launchImageLibrary : launchCamera;
+  
   return action(options, res => {
     if (res.didCancel) {
       Alert.alert('User cancel the image Piker');
@@ -18,6 +27,7 @@ export const OpenGaleria = (newImage, doAction) => {
           return uri;
         });
       newImage(source[0]);
+      uploadImage(source[0], nextId('image'));
     }
   });
 };
