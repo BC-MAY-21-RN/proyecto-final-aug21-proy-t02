@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {FlexContainer, InputLabel} from '../styled';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import * as mapConstants from '../../library/constants/mapConstants';
@@ -10,8 +10,8 @@ export const CustomMapView = ({
   siteLongitude,
   siteName,
   onSiteChange,
+  setPlacePosition,
 }) => {
-
   const [position, setPosition] = useState({
     latitude: siteLatitude,
     longitude: siteLongitude,
@@ -19,14 +19,24 @@ export const CustomMapView = ({
     longitudeDelta: 0.0421,
   });
 
-  const CustomMarker = (() => {
-    return(
-    <Marker
-    title={siteName}
-    coordinate={{latitude: position.latitude, longitude: position.longitude}}
-  />)
-  })
- 
+  //retrieves the marker position to parent component
+  const CustomMarker = () => {
+    useEffect(() => {
+      if (position && onSiteChange){
+        setPlacePosition(position);
+        console.log('Use Effect');
+      }
+    }, [position]);
+    return (
+      <Marker
+        title={siteName}
+        coordinate={{
+          latitude: position.latitude,
+          longitude: position.longitude,
+        }}></Marker>
+    );
+  };
+
   return (
     <FlexContainer h={mapHeight} w={mapWidth} alin>
       <InputLabel fonz="22px">Location</InputLabel>
@@ -43,8 +53,7 @@ export const CustomMapView = ({
         rotateEnabled={true}
         initialRegion={position}
         showsUserLocation={true}
-        onRegionChange={onSiteChange ? setPosition : undefined}
-        >
+        onRegionChange={onSiteChange ? setPosition : undefined}>
         {CustomMarker()}
       </MapView>
     </FlexContainer>
