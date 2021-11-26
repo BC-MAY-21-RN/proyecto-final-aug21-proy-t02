@@ -16,11 +16,7 @@ export const SelectImagesSite = () => {
   const [imagesTwo, setImagesTwo] = useState(false);
   const [imagesThree, setImagesThree] = useState(false);
   const [imagesFourt, setImagesFourt] = useState(false);
-
-  const activeIsLoading = () => {
-    setIsLoading(!isLoading);
-  }
-  
+  const activeIsLoading = () =>  setIsLoading(!isLoading);
   return (
     <Formik initialValues={{}}>{({values}) => (
         <Layout>
@@ -37,7 +33,6 @@ export const SelectImagesSite = () => {
           <ButtonCustom h="20%" mt="30px" text="Add"></ButtonCustom>
           {isLoading ? <Spiner /> : null}
         </Layout>
-        
       )}
     </Formik>
   );
