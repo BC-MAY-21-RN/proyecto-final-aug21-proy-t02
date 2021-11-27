@@ -1,17 +1,16 @@
 import storage from '@react-native-firebase/storage';
-
+import {Alert} from 'react-native';
 export const uploadImage = async (uri, filename) => {
   const reference = storage().ref(filename);
   const task = reference.putFile(uri);
   
   task.then(() => {
-    console.log('Image uploaded to the bucket!');
+    Alert.alert('The image has been uploaded correctly');
     getUrlFirebase(filename);
   });
-  task.catch(err => console.log('this is an err', err));
+  task.catch(err => Alert.alert('Sorry an error occurred ', err));
 };
 
 const getUrlFirebase = async uri => {
   let url = await storage().ref(uri).getDownloadURL();
-  console.log(url);
 };
