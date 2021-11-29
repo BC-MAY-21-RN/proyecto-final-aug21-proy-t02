@@ -24,7 +24,6 @@ export const CustomMapView = ({
     useEffect(() => {
       if (position && onSiteChange){
         setPlacePosition(position);
-        console.log('Use Effect');
       }
     }, [position]);
     return (

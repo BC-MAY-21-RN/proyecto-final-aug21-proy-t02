@@ -3,14 +3,11 @@ import {CustomButton, Layout, TextButton} from '../../components/styled';
 import {FlexContainer} from '../../components/styled';
 import {RecordHeader} from '../../components/RecordHeader';
 import {CustomMapView} from '../../components/CustomMapView';
-import * as mapConstants from '../../library/constants/mapConstants';
 import Geolocation from '@react-native-community/geolocation';
 
 export const SelectLocation = () => {
-  Geolocation.setRNConfiguration('always');
 
   const [position, setPosition] = useState({});
-
   const [locationLoaded, setLocationLoaded] = useState(false);
   
   useEffect(() => {
@@ -30,7 +27,7 @@ export const SelectLocation = () => {
           timeout: 2000,
           maximumAge: 3600000,
         },
-        ).catch(err => console.log('THIS IS AN ERROR', err));
+        );
       };
       getLocation();
     }}),[];
