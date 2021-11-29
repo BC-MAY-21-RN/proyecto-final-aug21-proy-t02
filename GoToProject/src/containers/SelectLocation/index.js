@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
-import {
-  CustomButton,
-  Layout,
-  TextButton,
-} from '../../components/styled';
-import {FlexContainer} from '../../components/styled';
-import {LocationMap} from '../../components/Location';
+import { CustomButton, Layout, TextButton, FlexContainer } from '../../components/styled';
 import {RecordHeader} from '../../components/RecordHeader';
+import {CustomMapView} from '../../components/CustomMapView';
+import { useMap } from '../../library/hooks';
 import { register } from '../../library/methods/auth';
 import { Spiner } from '../../components/Spiner';
 import { SafeAreaView } from 'react-native';
 
 export const SelectLocation = ({route: {params}, navigation}) => {
   const { email, password, username } = params.values;
-  const latitude= "11.21181";
-  const length= "-12.12";
   const [status, setStatus] = useState(false);
+  const {position, locationLoaded, setPosition} = useMap();
+  
   const handleSelectLocation = () =>{
-    register(email, password, username, latitude, length)
+    register(email, password, username, position.latitude, position.longitude)
     .then(() => {
       setStatus(true);
       setTimeout(() => {
@@ -29,14 +25,27 @@ export const SelectLocation = ({route: {params}, navigation}) => {
       console.log("error")
     });
   };
+  
+  const loadMap = () => {
+    return (
+      <CustomMapView
+        mapHeight="350px"
+        mapWidt="100%"
+        siteLatitude={position.latitude}
+        siteLongitude={position.longitude}
+        onSiteChange={true}
+        setPlacePosition={setPosition}></CustomMapView>
+    );
+  };
+
   return (
     <SafeAreaView>
       { status === true && <Spiner title={'SignedUP'}/>}
       <Layout>
         <RecordHeader route="SignUp" title="Select your location"></RecordHeader>
-        <LocationMap></LocationMap>
+        {locationLoaded ? loadMap() : undefined}
         <FlexContainer h="20%">
-          <CustomButton onPress={ handleSelectLocation }  h="40%">
+          <CustomButton onPress={ handleSelectLocation } h="40%">
             <TextButton>Sign up</TextButton>
           </CustomButton>
         </FlexContainer>
