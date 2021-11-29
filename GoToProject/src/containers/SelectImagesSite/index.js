@@ -9,6 +9,7 @@ import {ImgCustom} from '../../components/SelectImagesActions/SelectCustomImage'
 import {ShowPrimaryImage} from '../../components/SelectImagesActions/SelectimagePrimary';
 export const SelectImagesSite = () => {
   const [defaultImage] = useState(primaryImage);
+  const [isLoading,setIsLoading] = useState(false);
   const [imagePrimary, setImagePrimary] = useState(false);
   const [imagesOne, setImagesOne] = useState(false);
   const [imagesTwo, setImagesTwo] = useState(false);
