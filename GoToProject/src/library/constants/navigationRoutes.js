@@ -22,8 +22,8 @@ const options = {
 };
 export const stackList = [
   {
-    component:SelectLocation,
-    name:"SelectLocation",
+    component: Login,
+    name: 'Login',
     options: {...options, headerShown: false},
   },
   {
@@ -32,20 +32,10 @@ export const stackList = [
     options: {...options, headerShown: false},
   },
   {
-    component: Login,
-    name: 'Login',
+    component:SelectLocation,
+    name:"SelectLocation",
     options: {...options, headerShown: false},
   },
-  // {
-  //   component:SignUp,
-  //   name:"SignUp",
-  //   options: {...options, headerShown: false},
-  // },
-  // {
-  //   component:SelectLocation,
-  //   name:"SelectLocation",
-  //   options: {...options, headerShown: false},
-  // },
   {
     component:Home,
     name:"Home",
