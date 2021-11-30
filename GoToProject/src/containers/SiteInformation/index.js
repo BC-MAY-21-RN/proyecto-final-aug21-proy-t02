@@ -12,7 +12,7 @@ export const SiteInformation = ({navigation}) => {
   /* at the moment it is only for testing */
   const handleSiteInfor = (values) => {
     console.log(values);
-    navigation.navigate('Home');
+    navigation.navigate('SelectImagesSite');
   };
   return(
     <Formik 
