@@ -49,6 +49,9 @@ const createAditionalData = (latitude, length) => {
           lengthLocation: length,
           privacityAccepted: false,
         });
+        firestore().collection('reactions').doc(auth().currentUser.uid).set({
+          favorites: []
+        });
       }
     });
 };
