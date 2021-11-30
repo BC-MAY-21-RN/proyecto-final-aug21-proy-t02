@@ -1,7 +1,5 @@
 import {Alert} from 'react-native';
-import {uploadImage} from '../../library/methods/firebaseUploadImage.';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
-import nextId from 'react-id-generator';
 
 export const OpenGaleria = (newImage, doAction) => {
   let action = '';
@@ -27,7 +25,6 @@ export const OpenGaleria = (newImage, doAction) => {
           return uri;
         });
       newImage(source[0]);
-      uploadImage(source[0], nextId('image'));
     }
   });
 };

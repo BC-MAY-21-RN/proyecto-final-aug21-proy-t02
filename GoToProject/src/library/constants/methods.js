@@ -9,7 +9,8 @@ export const Inputs = ({
   values,
   actionPassword,
   showPassword,
-  showEye=false
+  showEye = false,
+  num = 0,
 }) => {
   let ouputs;
   return (
@@ -28,7 +29,7 @@ export const Inputs = ({
             actionPassword={actionPassword}
             showPassword={showPassword}
             showEye={showEye}
-            eye={index && 1 ? true : false}
+            eye={ index==num  ? true : false}
           />
         )))
       }
