@@ -1,42 +1,36 @@
 import storage from '@react-native-firebase/storage';
-import firestore from '@react-native-firebase/firestore';
 import {Alert} from 'react-native';
 import nextId from 'react-id-generator';
+import firestore from '@react-native-firebase/firestore';
 let saveFirebaseUrl = [];
 let counterUris = 0;
 let counter = 0;
 let newUuid = '';
-export const uploadImage = (images, uuid, spiner) => {
+export const uploadImage = (images, uuid, state) => {
   newUuid = uuid;
   for (const index in images) {
     if (images[index]) {
       if (counter === 0) {
-        uploadImagesFirebase(images[index], nextId(`${uuid}`), spiner );
+        uploadImagesFirebase(images[index], nextId(`${uuid}`), state);
       } else {
-        setTimeout(() => {
-          uploadImagesFirebase(images[index], nextId(`${uuid}`), spiner);
-        }, 5010);
+        setTimeout(() => uploadImagesFirebase(images[index], nextId(`${uuid}`), state),5010);
       }
       counter++;
     }
   }
 };
-const uploadImagesFirebase = async (uri, filename, spiner) => {
+const uploadImagesFirebase = async (uri, filename, stateSpiner) => {
   const reference = storage().ref(filename);
   const task = reference.putFile(uri);
-  task.then(() => {
-    getUrlFirebase(filename, spiner);
-  });
+  task.then(() => getUrlFirebase(filename, stateSpiner));
   task.catch(err => Alert.alert('Sorry an error occurred ', err));
 };
-const getUrlFirebase = async (uri, spiner) => {
+const getUrlFirebase = async (uri, spinerState) => {
   let url = await storage().ref(uri).getDownloadURL();
   saveFirebaseUrl[counterUris++] = url;
-  counterUris === counter
-    ? addUriFirebase(saveFirebaseUrl, newUuid, spiner)
-    : null;
+ counterUris === counter ? addUriImagesFirebase(saveFirebaseUrl, newUuid, spinerState) : null;
 };
-const addUriFirebase = (saveFirebaseUrl, uuid,spiner) => {
+const addUriImagesFirebase = (saveFirebaseUrl, uuid,spiner) => {
   try {
     firestore()
       .collection('images')

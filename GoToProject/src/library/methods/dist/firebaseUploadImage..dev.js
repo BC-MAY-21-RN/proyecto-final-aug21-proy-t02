@@ -7,11 +7,11 @@ exports.uploadImage = void 0;
 
 var _storage = _interopRequireDefault(require("@react-native-firebase/storage"));
 
-var _firestore = _interopRequireDefault(require("@react-native-firebase/firestore"));
-
 var _reactNative = require("react-native");
 
 var _reactIdGenerator = _interopRequireDefault(require("react-id-generator"));
+
+var _firestore = _interopRequireDefault(require("@react-native-firebase/firestore"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,16 +20,16 @@ var counterUris = 0;
 var counter = 0;
 var newUuid = '';
 
-var uploadImage = function uploadImage(images, uuid, spiner) {
+var uploadImage = function uploadImage(images, uuid, state) {
   newUuid = uuid;
 
   var _loop = function _loop(index) {
     if (images[index]) {
       if (counter === 0) {
-        uploadImagesFirebase(images[index], (0, _reactIdGenerator["default"])("".concat(uuid)), spiner);
+        uploadImagesFirebase(images[index], (0, _reactIdGenerator["default"])("".concat(uuid)), state);
       } else {
         setTimeout(function () {
-          uploadImagesFirebase(images[index], (0, _reactIdGenerator["default"])("".concat(uuid)), spiner);
+          return uploadImagesFirebase(images[index], (0, _reactIdGenerator["default"])("".concat(uuid)), state);
         }, 5010);
       }
 
@@ -44,7 +44,7 @@ var uploadImage = function uploadImage(images, uuid, spiner) {
 
 exports.uploadImage = uploadImage;
 
-var uploadImagesFirebase = function uploadImagesFirebase(uri, filename, spiner) {
+var uploadImagesFirebase = function uploadImagesFirebase(uri, filename, stateSpiner) {
   var reference, task;
   return regeneratorRuntime.async(function uploadImagesFirebase$(_context) {
     while (1) {
@@ -53,7 +53,7 @@ var uploadImagesFirebase = function uploadImagesFirebase(uri, filename, spiner) 
           reference = (0, _storage["default"])().ref(filename);
           task = reference.putFile(uri);
           task.then(function () {
-            getUrlFirebase(filename, spiner);
+            return getUrlFirebase(filename, stateSpiner);
           });
           task["catch"](function (err) {
             return _reactNative.Alert.alert('Sorry an error occurred ', err);
@@ -67,7 +67,7 @@ var uploadImagesFirebase = function uploadImagesFirebase(uri, filename, spiner) 
   });
 };
 
-var getUrlFirebase = function getUrlFirebase(uri, spiner) {
+var getUrlFirebase = function getUrlFirebase(uri, spinerState) {
   var url;
   return regeneratorRuntime.async(function getUrlFirebase$(_context2) {
     while (1) {
@@ -79,7 +79,7 @@ var getUrlFirebase = function getUrlFirebase(uri, spiner) {
         case 2:
           url = _context2.sent;
           saveFirebaseUrl[counterUris++] = url;
-          counterUris === counter ? addUriFirebase(saveFirebaseUrl, newUuid, spiner) : null;
+          counterUris === counter ? addUriImagesFirebase(saveFirebaseUrl, newUuid, spinerState) : null;
 
         case 5:
         case "end":
@@ -89,7 +89,7 @@ var getUrlFirebase = function getUrlFirebase(uri, spiner) {
   });
 };
 
-var addUriFirebase = function addUriFirebase(saveFirebaseUrl, uuid, spiner) {
+var addUriImagesFirebase = function addUriImagesFirebase(saveFirebaseUrl, uuid, spiner) {
   try {
     (0, _firestore["default"])().collection('images').add({
       id: 0,
