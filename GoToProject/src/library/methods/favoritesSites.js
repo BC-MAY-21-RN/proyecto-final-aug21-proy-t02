@@ -1,7 +1,7 @@
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 
-export const addSites = (title, description) => {
+export const addSites = (title, description, stars) => {
   firestore()
     .collection('reactions')
     .doc(auth().currentUser.uid)
@@ -13,6 +13,7 @@ export const addSites = (title, description) => {
           title: title,
           description: description,
           img: 'imagen',
+          stars: stars,
         });
         firestore().collection('reactions')
         .doc(auth().currentUser.uid)
