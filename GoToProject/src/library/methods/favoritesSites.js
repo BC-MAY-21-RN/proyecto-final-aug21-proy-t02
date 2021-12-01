@@ -1,8 +1,8 @@
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 
-export const addSites = (title, description, stars) => {
-  firestore()
+export const addSites = async (title, description, stars, img) => {
+  return await firestore()
     .collection('reactions')
     .doc(auth().currentUser.uid)
     .get()
@@ -12,7 +12,7 @@ export const addSites = (title, description, stars) => {
         data.favorites.push({
           title: title,
           description: description,
-          img: 'imagen',
+          img: img,
           stars: stars,
         });
         firestore().collection('reactions')

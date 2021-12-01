@@ -5,18 +5,18 @@ import {colors} from '../../library/constants/colors';
 import {CustomIcon} from '../CustomIcon';
 import { addSites } from '../../library/methods/favoritesSites';
 import firestore from '@react-native-firebase/firestore';
-import auth from '@react-native-firebase/auth';
 
 export const ImgButtos = () => {
   const navigation = useNavigation();
   const title = "Piedra de Acampanada";
   const description = "Aqui va la descripcion";
-  const stars = '3';
+  const stars = '3.8';
+  const img = 'https://firebasestorage.googleapis.com/v0/b/gotoproject-f3483.appspot.com/o/lDrXbPZMbzK0htYWWphi1?alt=media&token=6b68559d-26f4-449f-aab6-e58f085d4c77'
   const handleHeart = () => {
     console.log("Le dio a agregar a favoritos");
     console.log(title);
     console.log(description);
-    addSites(title, description, stars);
+    addSites(title, description, stars, img);
     firestore()
     .collection('images')
     .get()

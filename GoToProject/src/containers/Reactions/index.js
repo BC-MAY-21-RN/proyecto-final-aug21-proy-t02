@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import {Layout} from '../../components/styled';
-import reactions from '../../library/images/reactions.json';
 import {ScrollView, View} from 'react-native';
 import {Menu} from '../../components/menu';
 import {ReactionList} from '../../components/Reactions';
 import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
 import { fetchData } from '../../library/methods/favoritesSites';
 
 export const Reactions = () => {
