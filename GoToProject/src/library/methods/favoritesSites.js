@@ -22,3 +22,32 @@ export const addSites = (title, description, stars) => {
     })
     .catch(err => console.log('Error al agregar a favoritos'))
 };
+
+
+export const fetchData = async (favorite,setFavorite,idUser) => {
+  const subscriber = await firestore()
+  .collection('reactions')
+  .doc(idUser)
+  .onSnapshot(querySnapshot => {
+    if(querySnapshot._data.favorites.length === 0){
+      console.log('No tiene reacciones');
+      return;
+    }
+    const reaction = [];
+    querySnapshot._data.favorites.forEach(documentSnapshot => {
+      reaction.push({
+        ...documentSnapshot,
+        key: documentSnapshot.id,
+      });
+    });
+    const fixedReaction = reaction.map( re => {
+      return {
+        description: re.description,
+        img: re.img,
+        stars: re.stars,
+        title: re.title,
+      };
+    });
+    setFavorite(fixedReaction);
+  });
+}
