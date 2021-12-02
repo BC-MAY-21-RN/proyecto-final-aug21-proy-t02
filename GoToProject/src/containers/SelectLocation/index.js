@@ -18,7 +18,7 @@ export const SelectLocation = ({route: {params}, navigation}) => {
       setStatus(true);
       setTimeout(() => {
         setStatus(false);
-        navigation.navigate("Home");
+        navigation.navigate("SelectImagesSite");
       }, 2000);
     })
     .catch(()=>{

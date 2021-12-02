@@ -31,6 +31,7 @@ export const SelectImagesSite = ({route}) => {
   return (<>
           {isLoading ? <Spiner title="Creating a site"/> :null}
         <Layout>
+          {console.log(data)}
           <RecordHeader route="SiteInformation" title="Mages for the site "></RecordHeader>
           <InputLabel left="-60px" bot="10px" fonz="20px">Select the main image</InputLabel>
           <ShowPrimaryImage state={setImagePrimary} value={imagePrimary} def={defaultImage}/>

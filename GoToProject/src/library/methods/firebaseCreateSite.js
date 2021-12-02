@@ -3,7 +3,7 @@ import {Alert} from 'react-native';
 import {uploadImage} from './firebaseUploadImage.';
 export const createSite = (data, images, spiner) => {
   spiner(true);
-  const {latitude, length, siteDescription} = data;
+  const {position, siteDescription} = data;
   const {costs, workingDays} = data.dataInfo;
   const {categories, phone, siteName} = data.dataInfo.dataWork;
   try { firestore().collection('sites').add({
@@ -12,7 +12,8 @@ export const createSite = (data, images, spiner) => {
         description: siteDescription,
         hearts: 500,
         id: 52,
-        location: `${(latitude, length)}`,
+        latitude: position.latitude,
+        longitude: position.longitude,
         phone: phone,
         schedules_close: '09:25:00 .am',
         schedules_open: '10:02:05 .pm',
