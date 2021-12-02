@@ -1,22 +1,16 @@
 import React,{useState} from 'react';
 import {ButtonCustom} from '../../components/ButtonCustom';
-import {LocationMap} from '../../components/Location';
 import {RecordHeader} from '../../components/RecordHeader';
 import {FlexContainer, Layout} from '../../components/styled';
 import {Formik} from 'formik';
 import {siteDecription} from '../../library/constants/validationSchema';
 import {siteInfor} from '../../library/constants/dataForm';
 import {Inputs} from '../../library/constants/methods';
-import { useMap } from '../../library/hooks';
+import {useMap} from '../../library/hooks';
 import {CustomMapView} from '../../components/CustomMapView';
 
 export const SiteInformation = ({route, navigation}) => {
-  /* at the moment it is only for testing */
-  // let latitude;
-  // let length;
   const[dataInfo] = useState(route.params);
-  const [latitude, setLatitude] = useState('');
-  const [length, setLength] = useState('');
   const {position, locationLoaded, setPosition} = useMap();
   
   const handleSiteInfor = values => {
@@ -27,11 +21,6 @@ export const SiteInformation = ({route, navigation}) => {
     });
   };
 
-  // const setNewPositions = ({setValues}) => {
-  //   setValues
-  //   setLatitude(position.latitude),
-  //   setLength(position.longitude)
-  // }
   const loadMap = () => { 
     return (
       <CustomMapView
@@ -44,7 +33,7 @@ export const SiteInformation = ({route, navigation}) => {
           console.log("lat: ",latitude, "long: ", length)}</CustomMapView>
     );
   };
-  return (//is not updating values for coordinates before submitting, check this part
+  return (
     <Formik
       initialValues={{
         siteDescription: '',
@@ -62,7 +51,6 @@ export const SiteInformation = ({route, navigation}) => {
             touched={touched}
             values={values}
           />
-          {/* <LocationMap></LocationMap> */}
           {locationLoaded ? loadMap() : undefined}
           <ButtonCustom onPress={handleSubmit} h="20%" text="Next" />
           </FlexContainer>

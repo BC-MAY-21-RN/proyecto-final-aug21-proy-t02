@@ -7,6 +7,9 @@ import { signUpSchema } from '../../library/constants/validationSchema';
 import { Inputs } from '../../library/constants/methods';
 import { FlexContainer } from '../../components/styled';
 import { RecordHeader } from '../../components/RecordHeader';
+import { register } from '../../library/methods';
+import { Spiner } from '../../components/Spiner';
+
 
 export const SignUp = ({navigation}) => {
   const [shwPassword, setShowPassword] = useState(true);
@@ -19,6 +22,24 @@ export const SignUp = ({navigation}) => {
     signUpInputs[2].secureTextEntry=!shwPassword;
   }
 
+  const [status, setStatus] = useState(false);
+
+  const handleSignUp = (values) =>{
+    const { username, email, password } = values;
+
+    register(email, password, username)
+    .then(() => {
+      setStatus(true);
+      setTimeout(() => {
+        setStatus(false);
+        navigation.navigate("Home");
+      }, 2000);
+    })
+    .catch(()=>{
+      console.log("error")
+    });
+  };
+
   return (
     <Formik
       initialValues={{
@@ -27,9 +48,10 @@ export const SignUp = ({navigation}) => {
         password: '',
       }}
       validationSchema={ signUpSchema }
-      onSubmit={ values => handleSignIn(values)}>
+      onSubmit={ values => handleSignUp(values)}>
       {({handleChange, handleSubmit, errors, touched, values}) => (
         <Layout>
+          { status === true && <Spiner title={'SignedUP'}/>}
           <RecordHeader  route="Login"  title="Sign Up" />
           <Inputs 
             obj = {signUpInputs}

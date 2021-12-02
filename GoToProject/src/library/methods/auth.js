@@ -24,30 +24,29 @@ export const login = async (email, password, navigation, setStatus) => {
     });
 };
 
-export const register = async (email, password, username,latitude,length ) => {
+export const register = async (email, password, username ) => {
   return await auth()
     .createUserWithEmailAndPassword(email, password)
     .then(({user}) => {     
       user
         .updateProfile({displayName: username})
-        .then(() => createAditionalData(latitude, length));
+        .then(() => createUserData());
     })
     .catch(error => {
       console.log(error)
     });
 };
 
-const createAditionalData = (latitude, length) => {
+const createUserData = () => {
   firestore()
     .collection('users')
     .doc(auth().currentUser.uid)
     .get()
     .then(response => {
       if (!response.exists) {
+        console.log("Response exists");
         firestore().collection('users').doc(auth().currentUser.uid).set({
           name: auth().currentUser.displayName,
-          latitudeLocation: latitude,
-          lengthLocation: length,
           privacityAccepted: false,
         });
       }
