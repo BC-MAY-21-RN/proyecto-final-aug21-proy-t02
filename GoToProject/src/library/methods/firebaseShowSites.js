@@ -18,13 +18,9 @@ export const ShowSites = async setDataImages => {
             url_image: doc.data().name_imageOne,
           };
           dataImages[dataImages.length] = getData;
-          if (resource._docs.length === dataImages.length) {
-            setDataImages(dataImages);
-          }
-        })
-        .catch(error => Alert.alert('Something went wrong'));
+          if (resource._docs.length === dataImages.length) { setDataImages(dataImages);}
+        }).catch(error => Alert.alert('Something went wrong'));
     });
-  } catch (error) {
-    Alert.alert('Something went wrong');
+  } catch (error) { Alert.alert('Something went wrong');
   }
 };
