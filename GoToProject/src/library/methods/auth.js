@@ -5,7 +5,7 @@ import { Alert } from 'react-native';
 export const login = async (email, password, navigation, setStatus) => {
   return await auth()
     .signInWithEmailAndPassword(email, password)
-    .then(({user}) => {
+    .then(() => {
       console.log('Ingresó');
       setStatus(true);
       setTimeout(() => {
@@ -33,7 +33,7 @@ export const register = async (email, password, username ) => {
         .then(() => createUserData());
     })
     .catch(error => {
-      console.log(error)
+      Alert.alert('Sorry something went wrong :', error);
     });
 };
 

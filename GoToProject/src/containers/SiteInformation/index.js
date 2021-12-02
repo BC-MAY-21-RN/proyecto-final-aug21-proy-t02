@@ -29,8 +29,7 @@ export const SiteInformation = ({route, navigation}) => {
         siteLatitude={position.latitude}
         siteLongitude={position.longitude}
         onSiteChange={true}
-        setPlacePosition={setPosition}>{
-          console.log("lat: ",latitude, "long: ", length)}</CustomMapView>
+        setPlacePosition={setPosition}/>
     );
   };
   return (
