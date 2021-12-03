@@ -27,9 +27,7 @@ export const addSites = async (title, description, stars, img) => {
 
 export const fetchData = async (setFavorite,idUser) => {
   await firestore()
-  .collection('reactions')
-  .doc(idUser)
-  .get()
+  .collection('reactions').doc(idUser).get()
   .then(querySnapshot => {
     if(querySnapshot._data.favorites.length === 0){
       Alert.alert('No tiene reacciones');
