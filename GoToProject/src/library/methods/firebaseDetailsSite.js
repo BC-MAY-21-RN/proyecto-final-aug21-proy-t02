@@ -5,7 +5,6 @@ export const detailsSite = (idSite, setDataDetails) => {
     .doc(idSite)
     .get()
     .then(resourceSites => {
-      console.log(resourceSites._data);
       setDataDetails(resourceSites._data);
     })
     .catch(error => Alert.alert('Something went wrong'));
