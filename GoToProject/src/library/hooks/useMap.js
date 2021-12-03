@@ -16,7 +16,7 @@ export const useMap = () => {
             setLocationLoaded(true);
           },
           null,
-          {enableHighAccuracy: true, timeout: 2000, maximumAge: 3600000},
+          {enableHighAccuracy: true, timeout: 8000, maximumAge: 3600000},
         );
       };
       getLocation();

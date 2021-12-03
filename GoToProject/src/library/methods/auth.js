@@ -3,11 +3,10 @@ import firestore from '@react-native-firebase/firestore';
 import { Alert } from 'react-native';
 
 export const login = async (email, password, navigation, setStatus) => {
+  setStatus(true);
   return await auth()
-    .signInWithEmailAndPassword(email, password)
-    .then(({user}) => {
-      console.log('Ingresó');
-      setStatus(true);
+  .signInWithEmailAndPassword(email, password)
+  .then(() => {
       setTimeout(() => {
         setStatus(false);
         navigation.navigate("Home");
@@ -24,20 +23,20 @@ export const login = async (email, password, navigation, setStatus) => {
     });
 };
 
-export const register = async (email, password, username,latitude,length ) => {
+export const register = async (email, password, username ) => {
   return await auth()
     .createUserWithEmailAndPassword(email, password)
     .then(({user}) => {     
       user
         .updateProfile({displayName: username})
-        .then(() => createAditionalData(latitude, length));
+        .then(() => createUserData());
     })
     .catch(error => {
-      console.log(error)
+      Alert.alert('Sorry something went wrong :', error);
     });
 };
 
-const createAditionalData = (latitude, length) => {
+const createUserData = () => {
   firestore()
     .collection('users')
     .doc(auth().currentUser.uid)
@@ -46,8 +45,6 @@ const createAditionalData = (latitude, length) => {
       if (!response.exists) {
         firestore().collection('users').doc(auth().currentUser.uid).set({
           name: auth().currentUser.displayName,
-          latitudeLocation: latitude,
-          lengthLocation: length,
           privacityAccepted: false,
         });
       }
