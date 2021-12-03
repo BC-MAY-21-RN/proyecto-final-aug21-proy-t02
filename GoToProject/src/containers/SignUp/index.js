@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {Layout} from '../../components/styled';
 import {Formik} from 'formik';
 import {ButtonCustom} from '../../components/ButtonCustom';
@@ -9,11 +9,15 @@ import { FlexContainer } from '../../components/styled';
 import { RecordHeader } from '../../components/RecordHeader';
 
 export const SignUp = ({navigation}) => {
-
+  const [shwPassword, setShowPassword] = useState(true);
   /* at the moment it is only for testing */
   const handleSignIn = (values) =>{
     navigation.navigate('SelectLocation', {values})
   };
+  const handleInputPassword = () => {
+    setShowPassword(!shwPassword);
+    signUpInputs[2].secureTextEntry=!shwPassword;
+  }
 
   return (
     <Formik
@@ -33,6 +37,10 @@ export const SignUp = ({navigation}) => {
             errors={errors} 
             touched={touched} 
             values={values}
+            showEye={true}
+            actionPassword={handleInputPassword}
+            showPassword={shwPassword}
+            num={2}
           />
           <FlexContainer  h="20%" jc="center" mt="10px">
             <ButtonCustom onPress={handleSubmit} h="50%" mt="200px" mbt="0" text="Next" hb="75%"/>

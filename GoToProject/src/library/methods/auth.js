@@ -1,5 +1,6 @@
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import { Alert } from 'react-native';
 
 export const login = async (email, password, navigation, setStatus) => {
   return await auth()
@@ -14,11 +15,11 @@ export const login = async (email, password, navigation, setStatus) => {
     })
     .catch(error => {
       if (error.code === 'auth/wrong-password') {
-        console.log("wrong password")
+        Alert.alert("wrong password");
       }
 
       if (error.code === 'auth/user-not-found') {
-        console.log('wrong email')
+        Alert.alert('wrong email');
       }
     });
 };

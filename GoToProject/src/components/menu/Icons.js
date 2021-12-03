@@ -11,10 +11,10 @@ export const CustomIcons = ({
   designIcon = {fontSize: 40,top:-15, color: colors.white},
   design = {
     backgroundColor: showState ? colors.white : 'transparent',
-    left: -9,
-    top:-15,
+    left: -10,
+    top:-16,
     width: 50,
-    height: 5,
+    height: 3,
   },
 }) => {
   const navigation = useNavigation();

@@ -25,7 +25,7 @@ export const addSites = async (title, description, stars, img) => {
 
 
 export const fetchData = async (favorite,setFavorite,idUser) => {
-  const subscriber = await firestore()
+  await firestore()
   .collection('reactions')
   .doc(idUser)
   .onSnapshot(querySnapshot => {
