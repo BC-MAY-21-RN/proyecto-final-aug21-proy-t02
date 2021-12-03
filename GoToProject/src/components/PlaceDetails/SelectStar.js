@@ -24,10 +24,10 @@ export const SelectStar = ({start, close}) => {
           Schedules
         </Title>
         <Title h="30px" color={colors.lettersGray} left="80px" top="4px" fontt="300" fonz="21px">
-        {start} .am
+        {start} 
         </Title>
         <Title h="30px" color={colors.lettersGray} left="80px" top="-2px" fontt="300" fonz="21px">
-          {close} .pm
+          {close} 
         </Title>
       </BoxSchedules>
     </FlexContainer>

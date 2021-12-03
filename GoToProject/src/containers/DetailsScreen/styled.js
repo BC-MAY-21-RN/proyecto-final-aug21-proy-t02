@@ -87,8 +87,10 @@ export const TitlePrice = styled(TitleText)`
 `;
 export const TitleReaction = styled(TitleText)`
   align-items: center;
+  justify-content: space-between;
   padding: 0px 15px;
   margin: 2px;
+  width: 110px;
 `;
 export const Point = styled.View`
   background: ${colors.blue};

@@ -1,29 +1,32 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {CustomScrollView, FlexContainer, Layout} from '../../components/styled';
 import {CustomImage} from './styled';
 import {ImgButtos} from '../../components/PlaceDetails/ImgButtons';
 import {PlaceDetails} from '../../components/PlaceDetails';
 import {CustomMapView} from '../../components/CustomMapView';
 import * as mapConstants from '../../library/constants/mapConstants';
-const placeImg =
-  'https://www.unionguanajuato.mx/wp-content/uploads/2021/04/lugares-turisticos-los-cabos.jpg';
-const Details =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+import {detailsSite} from '../../library/methods/firebaseDetailsSite';
+export const DetailsScreen = ({route: {params}}) => {
+  const {urlImage, idSite} = params;
+  const [dataDetails, setDataDetails] = useState({});
+  useEffect(() => {
+    detailsSite(idSite, setDataDetails);
+  }, []);
 
-export const DetailsScreen = () => {
   return (
     <Layout justifyCont="center" padd="0">
       <CustomScrollView>
         <FlexContainer h="300px">
-          <CustomImage source={{uri: placeImg}} />
+          <CustomImage source={{uri: urlImage}} />
           <ImgButtos />
         </FlexContainer>
         <PlaceDetails
-          schedulePm="Sunday 10:00"
-          scheduleAm="Monday 10:00"
-          title="Piedra de Acampanada"
-          categorie="Camping"
-          description={Details}
+          data={dataDetails}
+          schedulePm={dataDetails.schedules_open}
+          scheduleAm={dataDetails.schedules_close}
+          title={dataDetails.title}
+          categorie={dataDetails.category}
+          description={dataDetails.description}
         />
         <CustomMapView
           mapHeight="400px"

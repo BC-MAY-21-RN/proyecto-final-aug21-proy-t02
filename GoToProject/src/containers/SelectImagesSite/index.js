@@ -26,7 +26,7 @@ export const SelectImagesSite = ({route}) => {
   }
   if(isLoading === 1){
     setIsLoading(false);
-    setTimeout(() => navigation.navigate("Home"),1);
+    setTimeout(() => navigation.navigate("Home",{"newsite":newsite=true}),1);
   }
   return (<>
           {isLoading ? <Spiner title="Creating a site"/> :null}
