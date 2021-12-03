@@ -47,6 +47,9 @@ const createUserData = () => {
           name: auth().currentUser.displayName,
           privacityAccepted: false,
         });
+        firestore().collection('reactions').doc(auth().currentUser.uid).set({
+          favorites: []
+        });
       }
     });
 };
