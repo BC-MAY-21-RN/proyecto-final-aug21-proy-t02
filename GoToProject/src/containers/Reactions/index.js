@@ -10,7 +10,7 @@ export const Reactions = () => {
   const [favorite, setFavorite] = useState([]);
   const idUser = auth().currentUser.uid;
   useEffect(() => {
-    fetchData(favorite,setFavorite,idUser);
+    fetchData(setFavorite,idUser);
   }, [idUser]);
 
   return (

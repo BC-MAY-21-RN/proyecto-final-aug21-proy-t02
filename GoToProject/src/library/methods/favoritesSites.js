@@ -1,5 +1,6 @@
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
+import { Alert } from 'react-native';
 
 export const addSites = async (title, description, stars, img) => {
   return await firestore()
@@ -24,13 +25,14 @@ export const addSites = async (title, description, stars, img) => {
 };
 
 
-export const fetchData = async (favorite,setFavorite,idUser) => {
+export const fetchData = async (setFavorite,idUser) => {
   await firestore()
   .collection('reactions')
   .doc(idUser)
-  .onSnapshot(querySnapshot => {
+  .get()
+  .then(querySnapshot => {
     if(querySnapshot._data.favorites.length === 0){
-      console.log('No tiene reacciones');
+      Alert.alert('No tiene reacciones');
       return;
     }
     const reaction = [];
@@ -49,5 +51,6 @@ export const fetchData = async (favorite,setFavorite,idUser) => {
       };
     });
     setFavorite(fixedReaction);
-  });
+  })
+  .catch(error => Alert.alert(error));
 }

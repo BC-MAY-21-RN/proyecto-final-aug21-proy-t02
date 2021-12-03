@@ -12,13 +12,14 @@ export const DetailsScreen = ({route: {params}}) => {
   useEffect(() => {
     detailsSite(idSite, setDataDetails);
   }, []);
-
   return (
     <Layout justifyCont="center" padd="0">
       <CustomScrollView>
         <FlexContainer h="300px">
           <CustomImage source={{uri: urlImage}} />
-          <ImgButtos />
+          <ImgButtos 
+            dataDetails = {dataDetails}
+            urlImage = {urlImage}/>
         </FlexContainer>
         <PlaceDetails
           data={dataDetails}
