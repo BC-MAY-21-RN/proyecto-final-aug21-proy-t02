@@ -6,7 +6,6 @@ import {
   Reactions,
   Login,
   SelectImagesSite,
-  SelectLocation,
   SignUp,
   SiteInformation,
   WorkShedules,
@@ -29,11 +28,6 @@ export const stackList = [
   {
     component:SignUp,
     name:"SignUp",
-    options: {...options, headerShown: false},
-  },
-  {
-    component:SelectLocation,
-    name:"SelectLocation",
     options: {...options, headerShown: false},
   },
   {
