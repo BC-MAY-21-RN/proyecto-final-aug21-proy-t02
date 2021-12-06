@@ -7,12 +7,12 @@ export const addNewSite = Yup.object().shape({
 });
 
 export const workSchedules = Yup.object().shape({
-  workingDays: Yup.string().min(15).max(25).required(),
-  costs: Yup.string().min(6).max(15).required(),
+  workingDays: Yup.string().min(10).max(25).required(),
+  costs: Yup.string().min(2).max(15).required(),
 });
 
 export const siteDecription = Yup.object().shape({
-  siteDescription: Yup.string().min(15).max(100).required(),
+  siteDescription: Yup.string().min(15).max(300).required(),
 });
 
 export const logInSchema = Yup.object().shape({

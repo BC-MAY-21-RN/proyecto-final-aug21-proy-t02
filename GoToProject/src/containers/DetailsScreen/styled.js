@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { ActivityIndicator} from 'react-native';
 import {FlexContainer, InputLabel, TitleText} from '../../components/styled';
 import {colors} from '../../library/constants/colors';
 export const CustomImage = styled.Image`
@@ -110,4 +111,8 @@ export const DetailsText = styled(InputLabel)`
   font-weight: 500;
   width: 350px;
   height: 280px;
+`;
+export const Loading = styled.ActivityIndicator`
+    width: 100%;
+    height: 300px;
 `;
