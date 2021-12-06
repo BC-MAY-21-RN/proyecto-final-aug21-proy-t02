@@ -1,12 +1,9 @@
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 import { Alert } from 'react-native';
-
 export const addSites = async (idSite, id_images, title, description, stars, img) => {
   return await firestore()
-    .collection('reactions')
-    .doc(auth().currentUser.uid)
-    .get()
+    .collection('reactions').doc(auth().currentUser.uid).get()
     .then(response => {
       if (response.exists) {
         var data = response.data();
@@ -18,17 +15,12 @@ export const addSites = async (idSite, id_images, title, description, stars, img
           img: img,
           stars: stars,
         });
-        firestore().collection('reactions')
-        .doc(auth().currentUser.uid)
-        .set(data);
+        firestore().collection('reactions').doc(auth().currentUser.uid).set(data);
       }
-    })
-    .catch(err => Alert.alert('Error al agregar a favoritos'))
+    }).catch(err => Alert.alert('Error al agregar a favoritos'))
 };
-
 export const fetchData = async (setFavorite,idUser) => {
-  await firestore()
-  .collection('reactions').doc(idUser).get()
+  await firestore().collection('reactions').doc(idUser).get()
   .then(querySnapshot => {
     if(querySnapshot._data.favorites.length === 0){
       Alert.alert('No tiene reacciones');
