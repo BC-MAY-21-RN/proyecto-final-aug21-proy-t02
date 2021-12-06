@@ -44,6 +44,5 @@ export const fetchData = async (setFavorite,idUser) => {
       };
     });
     setFavorite(fixedReaction);
-  })
-  .catch(error => Alert.alert(error));
+  }).catch(error => Alert.alert(error));
 }
