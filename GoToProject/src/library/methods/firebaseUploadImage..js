@@ -7,6 +7,8 @@ let counterUris = 0;
 let counter = 0;
 let newUuid = '';
 export const uploadImage = (images, uuid, state) => {
+  counterUris = 0;
+ counter = 0;
   newUuid = uuid;
   for (const index in images) {
     if (images[index]) {
@@ -43,9 +45,8 @@ const addUriImagesFirebase = (saveFirebaseUrl, uuid,spiner) => {
         name_imageThree: saveFirebaseUrl[2] ? saveFirebaseUrl[2] : false,
         name_imageTwo: saveFirebaseUrl[1] ? saveFirebaseUrl[1] : false,
       })
-      .then(() =>spiner(1));
+      .then(() => spiner(1));
   } catch (error) {
-    console.log(error);
     Alert.alert('Sorry something went wrong :', error);
   }
 };

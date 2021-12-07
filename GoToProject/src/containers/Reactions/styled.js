@@ -24,7 +24,7 @@ export const TextStart = styled(TitleText)`
   text-align: center;
 `;
 export const CartImage = styled(FlexContainer)``;
-export const CartInfo = styled(FlexContainer)`
+export const CartInfoBox = styled(FlexContainer)`
   margin-left: 13px;
 `;
 export const InfoTitle = styled(FlexContainer)`

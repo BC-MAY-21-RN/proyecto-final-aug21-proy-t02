@@ -15,10 +15,12 @@ export const login = async (email, password, navigation, setStatus) => {
     .catch(error => {
       if (error.code === 'auth/wrong-password') {
         Alert.alert("wrong password");
+        setStatus(false);
       }
 
       if (error.code === 'auth/user-not-found') {
         Alert.alert('wrong email');
+        setStatus(false);
       }
     });
 };

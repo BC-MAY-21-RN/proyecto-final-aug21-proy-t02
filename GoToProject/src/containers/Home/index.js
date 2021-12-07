@@ -10,12 +10,11 @@ import {Recents} from '../../components/home/sections/SectioRecent';
 import {Suggestions} from '../../components/home/sections/SectionSuggestions';
 import {Menu} from '../../components/menu';
 import { ShowSites } from '../../library/methods/firebaseShowSites';
-export const Home = ({newsite=false,navigation}) => {
+export const Home = ( {route:{params={"newsite":false}},navigation}) => {
 const [dataImages,setDataImages]= useState([]);
-newsite? ShowSites(setDataImages):null;
   useEffect(() => {
-    ShowSites(setDataImages);
-  }, []);
+    params.newsite==undefined? null :ShowSites(setDataImages);
+  }, [params.newsite]);
   return (
     <Layout aline="flex-start">
       <FlexContainer h="8%" dir="row" jc="space-between">
@@ -27,7 +26,7 @@ newsite? ShowSites(setDataImages):null;
       </FlexContainer>
       <Search />
       <Categories />
-      {dataImages.length==0? <ActivityIndicator size={120} style={styles.spiner} color={colors.blue} />:
+      {dataImages.length==0? <ActivityIndicator size={100} style={styles.spiner} color={colors.white} />:
       <ScrollView>
         <Recents dataImages={dataImages} title="RECENT"/>
         <Suggestions dataImages={dataImages}/>
