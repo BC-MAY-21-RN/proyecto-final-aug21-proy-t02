@@ -6,12 +6,31 @@ import {PlaceDetails} from '../../components/PlaceDetails';
 import {CustomMapView} from '../../components/CustomMapView';
 import * as mapConstants from '../../library/constants/mapConstants';
 import {detailsSite} from '../../library/methods/firebaseDetailsSite';
+import {useMap} from '../../library/hooks';
+
 export const DetailsScreen = ({route: {params}}) => {
   const {urlImage, idSite} = params;
   const [dataDetails, setDataDetails] = useState({});
+  const [coordinatesLoaded, setCoordinatesLoaded] = useState(false);
+  
+  useMap();
+  
   useEffect(() => {
-    detailsSite(idSite, setDataDetails);
+    detailsSite(idSite, setDataDetails, setCoordinatesLoaded);
   }, []);
+
+  const showMap = () => {
+    
+    return(
+      <CustomMapView
+          mapHeight="400px"
+          mapWidt="100%"
+          siteName={dataDetails.title}
+          siteLatitude={dataDetails.latitude}
+          siteLongitude={dataDetails.longitude}
+        />
+    )
+  };
   return (
     <Layout justifyCont="center" padd="0">
       <CustomScrollView>
@@ -29,13 +48,7 @@ export const DetailsScreen = ({route: {params}}) => {
           categorie={dataDetails.category}
           description={dataDetails.description}
         />
-        <CustomMapView
-          mapHeight="400px"
-          mapWidt="100%"
-          siteName={mapConstants.placeName}
-          siteLatitude={mapConstants.LATITUDE}
-          siteLongitude={mapConstants.LONGITUDE}
-        />
+        {coordinatesLoaded ? showMap() : undefined}
       </CustomScrollView>
     </Layout>
   );
