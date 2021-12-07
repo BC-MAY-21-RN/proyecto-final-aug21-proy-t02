@@ -53,7 +53,7 @@ export const DetailsScreen = ({route: {params}}) => {
           categorie={dataDetails.category}
           description={dataDetails.description}
         />
-        {coordinatesLoaded ? showMap() : undefined}
+        {coordinatesLoaded ? showMap() : undefined}</>}
       </CustomScrollView>
     </Layout>
   );
