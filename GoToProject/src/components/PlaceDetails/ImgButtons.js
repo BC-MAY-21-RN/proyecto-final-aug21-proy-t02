@@ -5,12 +5,12 @@ import {colors} from '../../library/constants/colors';
 import {CustomIcon} from '../CustomIcon';
 import { addSites } from '../../library/methods/favoritesSites';
 
-export const ImgButtos = ({dataDetails , urlImage}) => {
+export const ImgButtos = ({idSite, id_images, dataDetails, urlImage}) => {
   const { title, description, stars } = dataDetails;
   const navigation = useNavigation();
   const img = urlImage;
   const handleHeart = () => {
-    addSites(title, description, stars, img);
+    addSites(idSite, id_images, title, description, stars, img);
     navigation.navigate('Home');
   };
   return (

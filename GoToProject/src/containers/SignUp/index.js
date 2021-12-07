@@ -62,7 +62,7 @@ export const SignUp = ({navigation}) => {
             num={2}
           />
           <FlexContainer  h="20%" jc="center" mt="10px">
-            <ButtonCustom onPress={handleSubmit} h="50%" mt="200px" mbt="0" text="Sign up" hb="75%"/>
+            <ButtonCustom onPress={handleSubmit} h="56%" mt="200px" mbt="0" text="Sign up" hb="75%"/>
           </FlexContainer>
         </Layout>
       )}

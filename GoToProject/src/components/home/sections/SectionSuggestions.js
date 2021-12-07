@@ -17,6 +17,7 @@ export const Suggestions = ({dataImages}) => {
                 <ScrollListItem
                   withsize="195px"
                   desing={desing}
+                  id_Image={value.id_Image}
                   UrlDetails={value.url_image}
                   IdSites={value.id_site}
                   url={value.url_image}

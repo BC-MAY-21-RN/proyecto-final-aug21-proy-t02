@@ -5,6 +5,7 @@ import {ButtonCustom} from '../../components/ButtonCustom';
 import {RecordHeader} from '../../components/RecordHeader';
 import primaryImage from '../../library/images/Galeria.jpeg';
 import {Layout, InputLabel} from '../../components/styled';
+import nextId from 'react-id-generator';
 import {ImgCustom} from '../../components/SelectImagesActions/SelectCustomImage';
 import {ShowPrimaryImage} from '../../components/SelectImagesActions/SelectimagePrimary';
 import { createSite } from '../../library/methods/firebaseCreateSite';
@@ -26,7 +27,7 @@ export const SelectImagesSite = ({route}) => {
   }
   if(isLoading === 1){
     setIsLoading(false);
-    setTimeout(() => navigation.navigate("Home",{"newsite":newsite=true}),1);
+    setTimeout(() => navigation.navigate("Home",{"newsite":nextId(`nextId`)}),200);
   }
   return (<>
           {isLoading ? <Spiner title="Creating a site"/> :null}

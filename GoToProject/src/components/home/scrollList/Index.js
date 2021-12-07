@@ -3,6 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import {TitleText} from '../../styled';
 import {Image, TouchableOpacity} from 'react-native';
 export const ScrollListItem = ({
+  id_Image,
   UrlDetails,
   IdSites,
   url,
@@ -17,6 +18,7 @@ export const ScrollListItem = ({
         navigation.navigate('DetailsScreen', {
           "urlImage":UrlDetails,
           "idSite":IdSites,
+          "id_images": id_Image,
         });
       }}>
       <Image style={desing} source={{uri: url}} />
